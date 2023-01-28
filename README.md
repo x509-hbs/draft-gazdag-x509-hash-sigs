@@ -1,6 +1,6 @@
-# TODO - Your title
+# Algorithm Identifiers for Hash-based Signatures for Use in the Internet X.509 Public Key Infrastructure
 
-This is the working area for the individual Internet-Draft, "TODO - Your title".
+This is the working area for the individual Internet-Draft, "Algorithm Identifiers for Hash-based Signatures for Use in the Internet X.509 Public Key Infrastructure".
 
 * [Editor's Copy](https://x509-hbs.github.io/draft-gazdag-x509-hash-sigs/#go.draft-gazdag-x509-hash-sigs.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-gazdag-x509-hash-sigs)
