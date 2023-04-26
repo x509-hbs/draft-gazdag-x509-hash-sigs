@@ -1,4 +1,4 @@
-# Algorithm Identifiers for Hash-based Signatures for Use in the Internet X.509 Public Key Infrastructure
+# Internet X.509 Public Key Infrastructure: Algorithm Identifiers for Hash-based Signatures
 
 This is the working area for the individual Internet-Draft, "Algorithm Identifiers for Hash-based Signatures for Use in the Internet X.509 Public Key Infrastructure".
 
