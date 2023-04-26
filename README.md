@@ -1,17 +1,16 @@
 # Internet X.509 Public Key Infrastructure: Algorithm Identifiers for Hash-based Signatures
 
-This is the working area for the individual Internet-Draft, "Algorithm Identifiers for Hash-based Signatures for Use in the Internet X.509 Public Key Infrastructure".
+This is the working area for the individual Internet-Draft, "Internet X.509 Public Key Infrastructure: Algorithm Identifiers for Hash-based Signatures".
 
-* [Editor's Copy](https://x509-hbs.github.io/draft-gazdag-x509-hash-sigs/#go.draft-gazdag-x509-hash-sigs.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-gazdag-x509-hash-sigs)
 * [Individual Draft](https://datatracker.ietf.org/doc/html/draft-gazdag-x509-hash-sigs)
-* [Compare Editor's Copy to Individual Draft](https://x509-hbs.github.io/draft-gazdag-x509-hash-sigs/#go.draft-gazdag-x509-hash-sigs.diff)
+* [Repository](https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs)
 
 
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/blob//CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/blob/main/CONTRIBUTING.md).
 
 Contributions can be made by creating pull requests.
 The GitHub interface supports creating pull requests using the Edit (✏) button.
