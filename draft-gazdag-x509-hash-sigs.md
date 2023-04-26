@@ -13,7 +13,7 @@ venue:
   group: LAMPS
   type: Working Group
   mail: spasm@ietf.org
-  github: fluppe2/x509-hash-sigs
+  github: x509-hbs/draft-gazdag-x509-hash-sigs
 
 author:
 -
