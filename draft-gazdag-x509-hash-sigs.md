@@ -29,7 +29,7 @@ author:
 -
     ins: D. Van Geest
     name: Daniel Van Geest
-    org: 
+    org:
     email: daniel.vangeest.ietf@gmail.com
 -
     ins: S. Kousidis
