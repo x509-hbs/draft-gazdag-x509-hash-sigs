@@ -29,8 +29,8 @@ author:
 -
     ins: D. Van Geest
     name: Daniel Van Geest
-    org: ISARA Corporation
-    email: daniel.vangeest@isara.com
+    org:
+    email: daniel.vangeest.ietf@gmail.com
 -
     ins: S. Kousidis
     name: Stavros Kousidis
