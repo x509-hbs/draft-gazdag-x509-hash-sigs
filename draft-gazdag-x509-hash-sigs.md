@@ -91,6 +91,34 @@ informative:
   RFC8410:
   RFC8411:
   RFC8708: #hsslms in cms
+  MCGREW:
+    title: State Management for Hash-Based Signatures
+    author:
+    -
+      ins: D. McGrew
+    -
+      ins: P. Kampanakis
+    -
+      ins: S. Fluhrer
+    -
+      ins: S. Gazdag
+    -
+      ins: D. Butin
+    -
+      ins: J. Buchmann
+    date: 2016-11-02
+  NISTSP:
+    title: Recommendation for Stateful Hash-Based Signature Schemes
+    author:
+    -
+      ins: National Institute of Standards and Technology (NIST)
+    date: 2020-10-29
+  NSA:
+    title: Commercial National Security Algorithm Suite 2.0 (CNSA 2.0) Cybersecurity Advisory (CSA)
+    author:
+    -
+      ins: National Security Agency (NSA)
+    date: 2022-09-07
 
 --- abstract
 
@@ -113,21 +141,16 @@ understood and depends only on the security of the underlying hash function. As
 such they can serve as an important building block for quantum computer
 resistant information and communication technology.
 
-The private key of HSS, XMSS and XMSS^MT is a finite collection of OTS keys,
-hence only a limited number of messages can be signed and the private key's
-state must be updated and persisted after signing to prevent reuse of OTS keys.
-Due to thise statefulness of the private key and the limited number of
-signatures that can be created, these signature algorithms might not be
-appropriate for use in interactive protocols. While the right selection of
-algorithm parameters would allow a private key to sign a virtually unbounded
-number of messages (e.g. 2^60), this is at the cost of a larger signature size
-and longer signing time. Since these algorithms are already known to be secure
-against quantum attacks, and because roots of trust are generally long-lived and
-can take longer to be deployed than end-entity certificates, these signature
-algorithms are more appropriate to be used in root and subordinate CA
-certificates. They are also appropriate in non-interactive contexts such as code
-signing. In particular, there are multi-party IoT ecosystems where publicly
-trusted code signing certificates are useful.
+The private key of HSS, XMSS and XMSS^MT is a finite collection of OTS keys, hence only a limited
+number of messages can be signed and the private key's state must be updated and persisted
+after signing to prevent reuse of OTS keys. Due to thise statefulness of the private key
+and the limited number of signatures that can be created, these signature algorithms might
+not be appropriate for use in interactive protocols. While the right selection of algorithm
+parameters would allow a private key to sign a virtually unbounded number of messages (e.g. 2^60),
+this is at the cost of a larger signature size and longer signing time. Since these algorithms
+are already known to be secure against quantum attacks, and because roots of trust are generally
+long-lived and can take longer to be deployed than end-entity certificates, these signature
+algorithms are more appropriate to be used in some use case scenarios.
 
 The private key of SPHINCS+ is a finite but very large collection of FTS keys
 and hence stateless. This typically comes at the cost of larger signatures
@@ -144,7 +167,33 @@ i.e. either 24, 32 or 64 bytes. The height of a single tree is typically given
 by the parameter 'h'. The number of levels of trees is either called 'L' (HSS)
 or 'd' (XMSS, XMSS^MT, SPHINCS+).
 
-# Subject Public Key Algorithms
+# Use Cases of HBS in X.509
+
+As many cryptographic algorithms that are considered to be quantum-resistant,
+HBS have several pros and cons regarding their practical usage. On the positive side
+they are considered to be secure against a classical as well as a quantum adversary,
+a secure instantiation of HBS may always be built as long as a cryptographically
+secure hash function exists. While key generation and signature generation may
+take longer than classical alternatives, fast and minimal verification routines
+can be built. The major negative aspect is the statefullness of several HBS.
+Private keys always have to be handled in a secure manner, but stateful HBS
+necessitate a special treatment of the private key in order to avoid
+security incidents like signature forgery [MCGREW], [NISTSP].
+
+As a secure environment MUST be used for key generation and key management,
+HBS are still a proper solution for root CA certificates. HBS MAY be used for
+subordinate CA certificates, but special consideration MUST be taken into account
+for proper key management. HBS MUST NOT be used for end-entity certificates.
+
+They are also appropriate in non-interactive contexts such as code signing.
+Some manufactures use common and well-established key formats like X.509
+for their code signing and update mechanisms. In this case, a secure key
+environment as required can usually be established. Also there are multi-party
+IoT ecosystems where publicly trusted code signing certificates are useful.
+Further information about the security can be found in section 8. Also see
+[NSA] for a short comment e. g. on software and firmware signing.
+
+# Public Key Algorithms
 
 Certificates conforming to [RFC5280] can convey a public key for any public key
 algorithm. The certificate indicates the algorithm through an algorithm
