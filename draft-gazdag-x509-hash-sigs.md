@@ -143,7 +143,7 @@ resistant information and communication technology.
 
 The private key of HSS, XMSS and XMSS^MT is a finite collection of OTS keys, hence only a limited
 number of messages can be signed and the private key's state must be updated and persisted
-after signing to prevent reuse of OTS keys. Due to thise statefulness of the private key
+after signing to prevent reuse of OTS keys. Due to this statefulness of the private key
 and the limited number of signatures that can be created, these signature algorithms might
 not be appropriate for use in interactive protocols. While the right selection of algorithm
 parameters would allow a private key to sign a virtually unbounded number of messages (e.g. 2^60),
