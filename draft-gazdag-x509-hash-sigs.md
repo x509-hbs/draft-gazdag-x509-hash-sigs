@@ -92,6 +92,7 @@ informative:
   RFC8411:
   RFC8708: #hsslms in cms
   MCGREW:
+    target: https://tubiblio.ulb.tu-darmstadt.de/id/eprint/101633
     title: State Management for Hash-Based Signatures
     author:
     -
@@ -108,12 +109,14 @@ informative:
       ins: J. Buchmann
     date: 2016-11-02
   NISTSP:
+    target: https://doi.org/10.6028/NIST.SP.800-208
     title: Recommendation for Stateful Hash-Based Signature Schemes
     author:
     -
       ins: National Institute of Standards and Technology (NIST)
     date: 2020-10-29
   NSA:
+    target: https://media.defense.gov/2022/Sep/07/2003071834/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS_.PDF
     title: Commercial National Security Algorithm Suite 2.0 (CNSA 2.0) Cybersecurity Advisory (CSA)
     author:
     -
