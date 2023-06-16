@@ -136,7 +136,7 @@ lists.
 
 Hash-Based Signature (HBS) Schemes combine Merkle trees with One/Few Time
 Signatures (OTS/FTS) in order to provide digital signature schemes that remain
-secure even when quantum computers become available. There security is well
+secure even when quantum computers become available. Their security is well
 understood and depends only on the security of the underlying hash function. As
 such they can serve as an important building block for quantum computer
 resistant information and communication technology.
@@ -155,7 +155,7 @@ algorithms are more appropriate to be used in some use case scenarios.
 The private key of SPHINCS+ is a finite but very large collection of FTS keys
 and hence stateless. This typically comes at the cost of larger signatures
 compared to the stateful HBS variants. Thus SPHINCS+ is suitable for more
-use-cases if the signature sizes fit the requirements.
+use cases if the signature sizes fit the requirements.
 
 # Conventions and Definitions
 
@@ -163,9 +163,9 @@ use-cases if the signature sizes fit the requirements.
 
 The parameter 'n' is the security parameter, given in bytes. In practice this
 is typically aligned to the standard output length of the hash function in use,
-i.e. either 24, 32 or 64 bytes. The height of a single tree is typically given
-by the parameter 'h'. The number of levels of trees is either called 'L' (HSS)
-or 'd' (XMSS, XMSS^MT, SPHINCS+).
+i.e. either 16, 24, 32 or 64 bytes. The height of a single tree is typically
+given by the parameter 'h'. The number of levels of trees is either called 'L'
+(HSS) or 'd' (XMSS, XMSS^MT, SPHINCS+).
 
 # Use Cases of HBS in X.509
 
