@@ -162,7 +162,7 @@ i.e. either 16, 24, 32 or 64 bytes. The height of a single tree is typically
 given by the parameter 'h'. The number of levels of trees is either called 'L'
 (HSS) or 'd' (XMSS, XMSS^MT, SPHINCS+).
 
-# Use Cases of HBS in X.509
+# Use Cases of HBS in X.509 {#use-cases-hbs-x509}
 
 As many cryptographic algorithms that are considered to be quantum-resistant,
 HBS have several pros and cons regarding their practical usage. On the positive side
