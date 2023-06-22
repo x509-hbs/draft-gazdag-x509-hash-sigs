@@ -173,12 +173,11 @@ take longer than classical alternatives, fast and minimal verification routines
 can be built. The major negative aspect is the statefulness of several HBS.
 Private keys always have to be handled in a secure manner, but stateful HBS
 necessitate a special treatment of the private key in order to avoid
-security incidents like signature forgery [MCGREW], [NISTSP].
+security incidents like signature forgery [MCGREW], [NISTSP]. Therefore, for stateful HBS, a secure environment MUST be used for key generation and key management.
 
-As a secure environment MUST be used for key generation and key management,
-HBS are still a proper solution for root CA certificates. HBS MAY be used for
-subordinate CA certificates, but special consideration MUST be taken into account
-for proper key management. HBS MUST NOT be used for end-entity certificates.
+Note that, in general, root CAs offer such a secure environment and the number of issued signatures (including signed certificates and CRLs) is often moderate due to the fact that many root CAs delegate OCSP services or the signing of end-entity certificates to other entities (such as subordinate CAs) that use stateless signature schemes. Therefore, many root CAs should be able to handle the required state management, and stateful HBS offer a viable solution.
+
+HBS MAY also be used by subordinate CAs for issuing certificates, but special and careful consideration MUST be taken into account for proper key management. HBS MUST NOT be used for end-entity certificates.
 
 They are also appropriate in non-interactive contexts such as code signing.
 Some manufactures use common and well-established key formats like X.509
