@@ -145,15 +145,7 @@ such they can serve as an important building block for quantum computer
 resistant information and communication technology.
 
 The private key of HSS, XMSS and XMSS^MT is a finite collection of OTS keys, hence only a limited
-number of messages can be signed and the private key's state must be updated and persisted
-after signing to prevent reuse of OTS keys. Due to this statefulness of the private key
-and the limited number of signatures that can be created, these signature algorithms might
-not be appropriate for use in interactive protocols. While the right selection of algorithm
-parameters would allow a private key to sign a virtually unbounded number of messages (e.g. 2^60),
-this is at the cost of a larger signature size and longer signing time. Since these algorithms
-are already known to be secure against quantum attacks, and because roots of trust are generally
-long-lived and can take longer to be deployed than end-entity certificates, these signature
-algorithms are more appropriate to be used in some use case scenarios.
+number of messages can be signed and the private key's state must be updated and persisted after signing to prevent reuse of OTS keys. While the right selection of algorithm parameters would allow a private key to sign a virtually unbounded number of messages (e.g. 2^60), this is at the cost of a larger signature size and longer signing time. Due to the statefulness of the private key of HSS, XMSS and XMSS^MT and the limited number of signatures that can be created, these signature algorithms might not be appropriate for use in interactive protocols. However, in some use case scenarios the deployment of these signature algorithms may be appropriate. Such use cases are described and discussed later in {{use-cases-hbs-x509}}.
 
 The private key of SPHINCS+ is a finite but very large collection of FTS keys
 and hence stateless. This typically comes at the cost of larger signatures
