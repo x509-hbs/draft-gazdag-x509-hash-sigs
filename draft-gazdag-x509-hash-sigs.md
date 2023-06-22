@@ -178,7 +178,7 @@ they are considered to be secure against a classical as well as a quantum advers
 and a secure instantiation of HBS may always be built as long as a cryptographically
 secure hash function exists. Moreover, HBS offer small public key sizes, and, in comparison to other post-quantum signature schemes, the stateful HBS can offer relatively small signature sizes (for certain parameter sets). While key generation and signature generation may
 take longer than classical alternatives, fast and minimal verification routines
-can be built. The major negative aspect is the statefullness of several HBS.
+can be built. The major negative aspect is the statefulness of several HBS.
 Private keys always have to be handled in a secure manner, but stateful HBS
 necessitate a special treatment of the private key in order to avoid
 security incidents like signature forgery [MCGREW], [NISTSP].
