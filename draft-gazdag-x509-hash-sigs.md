@@ -176,7 +176,7 @@ As many cryptographic algorithms that are considered to be quantum-resistant,
 HBS have several pros and cons regarding their practical usage. On the positive side
 they are considered to be secure against a classical as well as a quantum adversary,
 and a secure instantiation of HBS may always be built as long as a cryptographically
-secure hash function exists. While key generation and signature generation may
+secure hash function exists. Moreover, HBS offer small public key sizes, and, in comparison to other post-quantum signature schemes, the stateful HBS can offer relatively small signature sizes (for certain parameter sets). While key generation and signature generation may
 take longer than classical alternatives, fast and minimal verification routines
 can be built. The major negative aspect is the statefullness of several HBS.
 Private keys always have to be handled in a secure manner, but stateful HBS
