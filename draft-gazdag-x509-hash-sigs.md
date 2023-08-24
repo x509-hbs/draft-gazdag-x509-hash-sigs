@@ -87,7 +87,6 @@ normative:
 informative:
   RFC3279:
   RFC4086: #rng
-  RFC4506: #xdr
   RFC8410:
   RFC8411:
   RFC8708: #hsslms in cms
@@ -95,43 +94,84 @@ informative:
     target: https://tubiblio.ulb.tu-darmstadt.de/id/eprint/101633
     title: State Management for Hash-Based Signatures
     author:
-    -
-      ins: D. McGrew
-    -
-      ins: P. Kampanakis
-    -
-      ins: S. Fluhrer
-    -
-      ins: S. Gazdag
-    -
-      ins: D. Butin
-    -
-      ins: J. Buchmann
+      -
+        ins: D. McGrew
+      -
+        ins: P. Kampanakis
+      -
+        ins: S. Fluhrer
+      -
+        ins: S. Gazdag
+      -
+        ins: D. Butin
+      -
+        ins: J. Buchmann
     date: 2016-11-02
   NISTSP:
     target: https://doi.org/10.6028/NIST.SP.800-208
     title: Recommendation for Stateful Hash-Based Signature Schemes
     author:
-    -
-      ins: National Institute of Standards and Technology (NIST)
+      -
+        ins: National Institute of Standards and Technology (NIST)
     date: 2020-10-29
   NSA:
     target: https://media.defense.gov/2022/Sep/07/2003071834/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS_.PDF
     title: Commercial National Security Algorithm Suite 2.0 (CNSA 2.0) Cybersecurity Advisory (CSA)
     author:
-    -
-      ins: National Security Agency (NSA)
+      -
+        ins: National Security Agency (NSA)
     date: 2022-09-07
+  Grover96:
+    target: https://doi.org/10.1145/237814.237866
+    title: A fast quantum mechanical algorithm for database search
+    author:
+      -
+        ins: L. Grover
+    date: 1996-07-01
+  BBBV97:
+    target: https://doi.org/10.1137/S0097539796300933
+    title: Strengths and Weaknesses of Quantum Computing
+    author:
+      -
+        ins: C. Bennett
+      -
+        ins: E. Bernstein
+      -
+        ins: G. Brassard
+      -
+        ins: U. Vazirani
+    date: 1997
+  DJB09:
+    target: http://cr.yp.to/papers.html#collisioncost
+    title: "Cost analysis of hash collisions: Will quantum computers make SHARCS obsolete?"
+    author:
+      -
+        ins: D. Bernstein
+    date: 2009-08-23
+  Fluhrer17:
+    target: https://eprint.iacr.org/2017/811.pdf
+    title: Reassessing Grover's Algorithm
+    author:
+      -
+        ins: S. Fluhrer
+    date: 2017-08-29
+  Zhandry15:
+    target: https://dl.acm.org/doi/10.5555/2871411.2871413
+    title: A note on the quantum collision and set equality problems
+    author:
+      -
+        ins: M. Zhandry
+    date: 2015-05-01
 
 --- abstract
 
-This document specifies algorithm identifiers and ASN.1 encoding formats for the
-Hash-Based Signature (HBS) schemes Hierarchical Signature System (HSS), eXtended
-Merkle Signature Scheme (XMSS), and XMSS^MT, a multi-tree variant of XMSS, as
-well as SPHINCS+, the latter being the only stateless scheme. This specification
-applies to the Internet X.509 Public Key infrastructure (PKI) when those digital
-signatures are used in Internet X.509 certificates and certificate revocation
-lists.
+This document specifies algorithm identifiers and ASN.1 encoding formats for
+the Hash-Based Signature (HBS) schemes Hierarchical Signature System (HSS),
+eXtended Merkle Signature Scheme (XMSS), and XMSS^MT, a multi-tree variant of
+XMSS, as well as SPHINCS+, the latter being the only stateless scheme. This
+specification applies to the Internet X.509 Public Key infrastructure (PKI)
+when those digital signatures are used in Internet X.509 certificates and
+certificate revocation lists.
 
 --- middle
 
@@ -144,13 +184,22 @@ understood and depends only on the security of the underlying hash function. As
 such they can serve as an important building block for quantum computer
 resistant information and communication technology.
 
-The private key of HSS, XMSS and XMSS^MT is a finite collection of OTS keys, hence only a limited
-number of messages can be signed and the private key's state must be updated and persisted after signing to prevent reuse of OTS keys. While the right selection of algorithm parameters would allow a private key to sign a virtually unbounded number of messages (e.g. 2^60), this is at the cost of a larger signature size and longer signing time. Due to the statefulness of the private key of HSS, XMSS and XMSS^MT and the limited number of signatures that can be created, these signature algorithms might not be appropriate for use in interactive protocols. However, in some use case scenarios the deployment of these signature algorithms may be appropriate. Such use cases are described and discussed later in {{use-cases-hbs-x509}}.
+The private key of HSS, XMSS and XMSS^MT is a finite collection of OTS keys,
+hence only a limited number of messages can be signed and the private key's
+state must be updated and persisted after signing to prevent reuse of OTS keys.
+While the right selection of algorithm parameters would allow a private key to
+sign a virtually unbounded number of messages (e.g. 2^60), this is at the cost
+of a larger signature size and longer signing time. Due to the statefulness of
+the private key of HSS, XMSS and XMSS^MT and the limited number of signatures
+that can be created, these signature algorithms might not be appropriate for
+use in interactive protocols. However, in some use case scenarios the
+deployment of these signature algorithms may be appropriate. Such use cases are
+described and discussed later in {{use-cases-hbs-x509}}.
 
 The private key of SPHINCS+ is a finite but very large collection of FTS keys
 and hence stateless. This typically comes at the cost of larger signatures
-compared to the stateful HBS variants. Thus SPHINCS+ is suitable for more
-use cases if the signature sizes fit the requirements.
+compared to the stateful HBS variants. Thus SPHINCS+ is suitable for more use
+cases if the signature sizes fit the requirements.
 
 # Conventions and Definitions
 
@@ -165,23 +214,34 @@ given by the parameter 'h'. The number of levels of trees is either called 'L'
 # Use Cases of HBS in X.509 {#use-cases-hbs-x509}
 
 As many cryptographic algorithms that are considered to be quantum-resistant,
-HBS have several pros and cons regarding their practical usage. On the positive side
-they are considered to be secure against a classical as well as a quantum adversary,
-and a secure instantiation of HBS may always be built as long as a cryptographically
-secure hash function exists. Moreover, HBS offer small public key sizes, and, in comparison to other post-quantum signature schemes, the stateful HBS can offer relatively small signature sizes (for certain parameter sets). While key generation and signature generation may
-take longer than classical alternatives, fast and minimal verification routines
-can be built. The major negative aspect is the statefulness of several HBS.
-Private keys always have to be handled in a secure manner, but stateful HBS
-necessitate a special treatment of the private key in order to avoid
-security incidents like signature forgery [MCGREW], [NISTSP]. Therefore, for stateful HBS, a secure environment MUST be used for key generation and key management.
+HBS have several pros and cons regarding their practical usage. On the positive
+side they are considered to be secure against a classical as well as a quantum
+adversary, and a secure instantiation of HBS may always be built as long as a
+cryptographically secure hash function exists. Moreover, HBS offer small public
+key sizes, and, in comparison to other post-quantum signature schemes, the
+stateful HBS can offer relatively small signature sizes (for certain parameter
+sets). While key generation and signature generation may take longer than
+classical alternatives, fast and minimal verification routines can be built.
+The major negative aspect is the statefulness of several HBS.  Private keys
+always have to be handled in a secure manner, but stateful HBS necessitate a
+special treatment of the private key in order to avoid security incidents like
+signature forgery [MCGREW], [NISTSP]. Therefore, for stateful HBS, a secure
+environment MUST be used for key generation and key management.
 
-Note that, in general, root CAs offer such a secure environment and the number of issued signatures (including signed certificates and CRLs) is often moderate due to the fact that many root CAs delegate OCSP services or the signing of end-entity certificates to other entities (such as subordinate CAs) that use stateless signature schemes. Therefore, many root CAs should be able to handle the required state management, and stateful HBS offer a viable solution.
+Note that, in general, root CAs offer such a secure environment and the number
+of issued signatures (including signed certificates and CRLs) is often moderate
+due to the fact that many root CAs delegate OCSP services or the signing of
+end-entity certificates to other entities (such as subordinate CAs) that use
+stateless signature schemes. Therefore, many root CAs should be able to handle
+the required state management, and stateful HBS offer a viable solution.
 
-HBS MAY also be used by subordinate CAs for issuing certificates, but special and careful consideration MUST be taken into account for proper key management. HBS MUST NOT be used for end-entity certificates.
+HBS MAY also be used by subordinate CAs for issuing certificates, but special
+and careful consideration MUST be taken into account for proper key management.
+HBS MUST NOT be used for end-entity certificates.
 
 They are also appropriate in non-interactive contexts such as code signing.
-Some manufactures use common and well-established key formats like X.509
-for their code signing and update mechanisms. In this case, a secure key
+Some manufactures use common and well-established key formats like X.509 for
+their code signing and update mechanisms. In this case, a secure key
 environment as required can usually be established. Also there are multi-party
 IoT ecosystems where publicly trusted code signing certificates are useful.
 Further information about the security can be found in section 8. Also see
@@ -617,10 +677,10 @@ pre-image attacks. The results of [BBBV97] show that this improvement is
 optimal, however [Fluhrer17] notes that Grover's algorithm doesn't parallelize
 well. Thus, given a bounded amount of time to perform the attack and using a
 conservative estimate of the performance of a real quantum computer, the
-pre-image quantum security of SHA-256 is closer to 190 bits. All parameter
-sets for the signature algorithms in this document currently use SHA-256
-internally and thus have at least 128 bits of quantum pre-image resistance, or
-190 bits using the security assumptions in [Fluhrer17].
+pre-image quantum security of SHA-256 is closer to 190 bits. All parameter sets
+for the signature algorithms in this document currently use SHA-256 internally
+and thus have at least 128 bits of quantum pre-image resistance, or 190 bits
+using the security assumptions in [Fluhrer17].
 
 [Zhandry15] shows that hash collisions can be found using an algorithm with a
 lower bound on the number of oracle queries on the order of 2^(n/3) on the
