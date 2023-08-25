@@ -17,6 +17,11 @@ venue:
 
 author:
 -
+    ins: K. Bashiri
+    name: Kaveh Bashiri
+    org: BSI
+    email: tbd@tbd.tbd
+-
     ins: S. Fluhrer
     name: Scott Fluhrer
     org: Cisco Systems
@@ -82,7 +87,7 @@ informative:
     date: 2016-11-02
   MCGREW:
     target: https://eprint.iacr.org/2016/1042.pdf
-    title: “Oops, I did it again” – Security of One-Time Signatures under Two-Message Attacks. 
+    title: “Oops, I did it again” – Security of One-Time Signatures under Two-Message Attacks.
     author:
       -
         ins: L. G. Bruinderink
@@ -102,10 +107,10 @@ informative:
 This document specifies algorithm identifiers and ASN.1 encoding formats for
 the Hash-Based Signature (HBS) schemes Hierarchical Signature System (HSS),
 eXtended Merkle Signature Scheme (XMSS), and XMSS^MT, a multi-tree variant of
-XMSS, as well as SPHINCS+, the latter being the only stateless scheme. This
-specification applies to the Internet X.509 Public Key infrastructure (PKI)
-when those digital signatures are used in Internet X.509 certificates and
-certificate revocation lists.
+XMSS, as well as SLH-DSA (formerly SPHINCS+), the latter being the only
+stateless scheme. This specification applies to the Internet X.509 Public Key
+infrastructure (PKI) when those digital signatures are used in Internet X.509
+certificates and certificate revocation lists.
 
 --- middle
 
@@ -113,10 +118,10 @@ certificate revocation lists.
 
 Hash-Based Signature (HBS) Schemes combine Merkle trees with One/Few Time
 Signatures (OTS/FTS) in order to provide digital signature schemes that remain
-secure even when quantum computers become available. Their theoretic security is well
-understood and depends only on the security of the underlying hash function. As
-such they can serve as an important building block for quantum computer
-resistant information and communication technology.
+secure even when quantum computers become available. Their theoretic security
+is well understood and depends only on the security of the underlying hash
+function. As such they can serve as an important building block for quantum
+computer resistant information and communication technology.
 
 The private key of HSS, XMSS and XMSS^MT is a finite collection of OTS keys,
 hence only a limited number of messages can be signed and the private key's
@@ -130,9 +135,9 @@ use in interactive protocols. However, in some use case scenarios the
 deployment of these signature algorithms may be appropriate. Such use cases are
 described and discussed later in {{use-cases-hbs-x509}}.
 
-The private key of SPHINCS+ is a finite but very large collection of FTS keys
+The private key of SLH-DSA is a finite but very large collection of FTS keys
 and hence stateless. This typically comes at the cost of larger signatures
-compared to the stateful HBS variants. Thus SPHINCS+ is suitable for more use
+compared to the stateful HBS variants. Thus SLH-DSA is suitable for more use
 cases if the signature sizes fit the requirements.
 
 # Conventions and Definitions
@@ -143,7 +148,7 @@ The parameter 'n' is the security parameter, given in bytes. In practice this
 is typically aligned to the standard output length of the hash function in use,
 i.e. either 16, 24, 32 or 64 bytes. The height of a single tree is typically
 given by the parameter 'h'. The number of levels of trees is either called 'L'
-(HSS) or 'd' (XMSS, XMSS^MT, SPHINCS+).
+(HSS) or 'd' (XMSS, XMSS^MT, SLH-DSA).
 
 # Use Cases of HBS in X.509 {#use-cases-hbs-x509}
 
@@ -219,9 +224,9 @@ The HSS public key is defined as follows:
 
     HSS-LMS-HashSig-PublicKey ::= OCTET STRING
 
-See [NIST-SP-800-208] for more information on the contents and format of an HSS
-public key. Note that the single-tree signature scheme LMS is instantiated as
-HSS with level L=1.
+See [NIST-SP-800-208] and [RFC8554] for more information on the contents and
+format of an HSS public key. Note that the single-tree signature scheme LMS is
+instantiated as HSS with level L=1.
 
 ##  XMSS Public Keys
 
@@ -245,8 +250,8 @@ The XMSS public key is defined as follows:
 
     XMSS-HashSig-PublicKey ::= OCTET STRING
 
-See [NIST-SP-800-208] for more information on the contents and format of an
-XMSS public key.
+See [NIST-SP-800-208] and [RFC8391] for more information on the contents and
+format of an XMSS public key.
 
 ## XMSS^MT Public Keys
 
@@ -270,12 +275,12 @@ The XMSS^MT public key is defined as follows:
 
     XMSSMT-HashSig-PublicKey ::= OCTET STRING
 
-See [NIST-SP-800-208] for more information on the contents and format of an
-XMSS^MT public key.
+See [NIST-SP-800-208] and [RFC8391] for more information on the contents and
+format of an XMSS^MT public key.
 
-## SPHINCS+ Public Keys
+## SLH-DSA Public Keys
 
-The object and public key algorithm identifiers for SPHINCS+ are defined in
+The object and public key algorithm identifiers for SLH-DSA are defined in
 [I-D.ietf-lamps-cms-sphincs-plus]. The definitions are repeated here for
 reference.
 
@@ -288,7 +293,7 @@ reference.
     id-alg-sphincs-plus-256 OBJECT IDENTIFIER ::= {
        TBD }
 
-The SPHINCS+ public key identifier is as follows:
+The SLH-DSA public key identifier is as follows:
 
     pk-sphincs-plus-128 PUBLIC-KEY ::= {
        IDENTIFIER id-alg-sphincs-plus-128
@@ -311,12 +316,12 @@ The SPHINCS+ public key identifier is as follows:
        CERT-KEY-USAGE
           { digitalSignature, nonRepudiation, keyCertSign, cRLSign } }
 
-The SPHINCS+ public key is defined as follows:
+The SLH-DSA public key is defined as follows:
 
     SPHINCS-Plus-PublicKey ::= OCTET STRING
 
-See [NIST-FIPS-205] for more information on the contents and format of a SPHINCS+
-public key.
+See [NIST-FIPS-205] for more information on the contents and format of a
+SLH-DSA public key.
 
 # Key Usage Bits
 
@@ -344,22 +349,22 @@ as for the keys above.
 
 # Signature Algorithms
 
-This section identifies OIDs for signing using HSS, XMSS, XMSS^MT, and
-SPHINCS+. When these algorithm identifiers appear in the algorithm field as an
+This section identifies OIDs for signing using HSS, XMSS, XMSS^MT, and SLH-DSA.
+When these algorithm identifiers appear in the algorithm field as an
 AlgorithmIdentifier, the encoding MUST omit the parameters field. That is, the
 AlgorithmIdentifier SHALL be a SEQUENCE of one component, one of the OIDs
-defined below.
+defined in the following subsections.
 
 The data to be signed is prepared for signing. For the algorithms used in this
 document, the data is signed directly by the signature algorithm, the data is
 not hashed before processing. Then, a private key operation is performed to
 generate the signature value. For HSS, the signature value is described in
 section 6.4 of [RFC8554]. For XMSS and XMSS^MT the signature values are
-described in sections B.2 and C.2 of [RFC8391], respectively. For SPHINCS+ the
-signature values are described in [NIST-FIPS-205]. The octet string
-representing the signature is encoded directly in the BIT STRING without adding
-any additional ASN.1 wrapping. For the Certificate and CertificateList
-structures, the signature value is wrapped in the "signatureValue" BIT STRING
+described in sections B.2 and C.2 of [RFC8391], respectively. For SLH-DSA the
+signature values are described in 9.2 of [NIST-FIPS-205]. The octet string
+representing the signature is encoded directly in the OCTET STRING without
+adding any additional ASN.1 wrapping. For the Certificate and CertificateList
+structures, the signature value is wrapped in the "signatureValue" OCTET STRING
 field.
 
 ## HSS Signature Algorithm
@@ -394,8 +399,11 @@ The XMSS signature is defined as follows:
 
     XMSS-HashSig-Signature ::= OCTET STRING
 
-See [NIST-SP-800-208] for more information on the contents and format of an
-XMSS signature.
+See [NIST-SP-800-208] and [RFC8391] for more information on the contents and
+format of an XMSS signature.
+
+The signature generation MUST be performed according to 7.2 of
+[NIST-SP-800-208].
 
 ## XMSS^MT Signature Algorithm
 
@@ -415,11 +423,14 @@ The XMSS^MT signature is defined as follows:
 See [NIST-SP-800-208] for more information on the contents and format of an
 XMSS^MT signature.
 
-## SPHINCS+ Signature Algorithm
+The signature generation MUST be performed according to 7.2 of
+[NIST-SP-800-208].
 
-The SPHINCS+ public key OID is also used to specify that a SPHINCS+ signature
+## SLH-DSA Signature Algorithm
+
+The SLH-DSA public key OID is also used to specify that a SLH-DSA signature
 was generated on the full message, i.e. the message was not hashed before being
-processed by the SPHINCS+ signature algorithm.
+processed by the SLH-DSA signature algorithm.
 
     id-alg-sphincs-plus-128 OBJECT IDENTIFIER ::= {
        TBD }
@@ -430,12 +441,17 @@ processed by the SPHINCS+ signature algorithm.
     id-alg-sphincs-plus-256 OBJECT IDENTIFIER ::= {
        TBD }
 
-The SPHINCS+ signature is defined as follows:
+The SLH-DSA signature is defined as follows:
 
     SPHINCS-Plus-Signature ::= OCTET STRING
 
-See [NIST-FIPS-205] for more information on the contents and format of a SPHINCS+
+See [NIST-FIPS-205] for more information on the contents and format of a SLH-DSA
 signature.
+
+# Key Generation
+
+The key generation for XMSS and XMSS^MT MUST be performed according to 7.2 of
+[NIST-SP-800-208]
 
 # ASN.1 Module
 
@@ -601,15 +617,44 @@ This ASN.1 Module builds upon the conventions established in [RFC5911].
 
 # Security Considerations
 
-The security requirements of the HBS standards [NIST-SP-800-208] and [NIST-FIPS-205] MUST be taken
-into account.
-For the stateful HBS it is crucial to stress the importance of a correct state management.
-If an attacker were able to obtain signatures for two different messages created using the same 
-OTS key, then it would become computationally feasible for that attacker to create 
-forgeries [BH16]. As noted in [MCGREW], extreme care needs to be taken in order to avoid the risk 
-that an OTS key will be reused accidentally. This is a new property that
-most developers will not be familiar with and requires careful handling. 
+The security requirements of [NIST-SP-800-208] and [NIST-FIPS-205] MUST be
+taken into account.
 
+For the stateful HBS (HSS, XMSS, XMSS^MT) it is crucial to stress the
+importance of a correct state management. If an attacker were able to obtain
+signatures for two different messages created using the same OTS key, then it
+would become computationally feasible for that attacker to create forgeries
+[BH16]. As noted in [MCGREW], extreme care needs to be taken in order to avoid
+the risk that an OTS key will be reused accidentally. This is a new requirement
+that most developers will not be familiar with and requires careful handling.
+
+Various strategies for a correct state management can be applied:
+
+- Implement a track record of all signatures generated via a key pair
+  associated to a stateful HBS instance. This track record may be stored
+  outside the device which is used to generate the signature. Check the track
+  record to prevent OTS key reuse before a new signature is released. Drop the
+  new signature and hit your PANIC button if you spot OTS key reuse.
+
+- Use a stateful HBS instance only for a moderate number of signatures such
+  that it is always practical to keep a consitent track record and be able to
+  unambiguously trace back all generated signatures.
+
+# Backup and Restore Management
+
+Certificate Authorities have high demands in order to ensure the availability
+of signature generation throughout the validity period of signing key pairs.
+ 
+Usual backup and restore strategies when using a stateless signature scheme
+(e.g. SLH-DSA) is to duplicate private keying material and to operate redundant
+signing devices or to store and safeguard a copy of the private keying material
+such that it can be used to set up a new signing device in case of technical
+difficulties. 
+
+For stateful HBS such straightforward backup and restore strategies will lead
+to OTS reuse with high probability as a correct state management is not
+guaranteed. Strategies for maintaining availibility and keeping a correct state
+are described in 7 of [NIST-SP-800-208].
 
 # IANA Considerations
 
@@ -623,6 +668,7 @@ Identifier" registry for the ASN.1 module in Section 6.
 
 Thanks for Russ Housley and Panos Kampanakis for helpful suggestions.
 
-This document uses a lot of text from similar documents [NIST-SP-800-208], ([RFC3279] and
-[RFC8410]) as well as [RFC8708]. Thanks go to the authors of those documents.
-"Copying always makes things easier and less error prone" - [RFC8411].
+This document uses a lot of text from similar documents [NIST-SP-800-208],
+([RFC3279] and [RFC8410]) as well as [RFC8708]. Thanks go to the authors of
+those documents. "Copying always makes things easier and less error prone" -
+[RFC8411].
