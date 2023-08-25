@@ -43,50 +43,23 @@ normative:
   RFC8391: #xmss
   RFC8554: #hsslms
   I-D.ietf-lamps-cms-sphincs-plus:
-  SP-Sub:
-    title: SPHINCS+ - Submission to the 3rd round of the NIST post-quantum project. v3.1
+  NIST-SP-800-208:
+    target: https://doi.org/10.6028/NIST.SP.800-208
+    title: Recommendation for Stateful Hash-Based Signature Schemes
     author:
       -
-        ins: J. Aumasson
+        ins: National Institute of Standards and Technology (NIST)
+    date: 2020-10-29
+  NIST-FIPS-205:
+    target: https://doi.org/10.6028/NIST.FIPS.205.ipd
+    title: Stateless Hash-Based Digital Signature Standard
+    author:
       -
-        ins: D. J. Bernstein
-      -
-        ins: W. Beullens
-      -
-        ins: C. Dobraunig
-      -
-        ins: M. Eichlseder
-      -
-        ins: S. Fluhrer
-      -
-        ins: S. Gazdag
-      -
-        ins: A. Huelsing
-      -
-        ins: P. Kampanakis
-      -
-        ins: S. Koelb
-      -
-        ins: T. Lange
-      -
-        ins: M. M. Lauridsen
-      -
-        ins: F. Mendel
-      -
-        ins: R. Niederhagen
-      -
-        ins: C. Rechberger
-      -
-        ins: J. Rijneveld
-      -
-        ins: P. Schwabe
-      -
-        ins: B. Westerbaan
-    date: 2021-06-10
+        ins: National Institute of Standards and Technology (NIST)
+    date: 2023-08-24
 
 informative:
   RFC3279:
-  RFC4086: #rng
   RFC8410:
   RFC8411:
   RFC8708: #hsslms in cms
@@ -107,13 +80,15 @@ informative:
       -
         ins: J. Buchmann
     date: 2016-11-02
-  NISTSP:
-    target: https://doi.org/10.6028/NIST.SP.800-208
-    title: Recommendation for Stateful Hash-Based Signature Schemes
+  MCGREW:
+    target: https://eprint.iacr.org/2016/1042.pdf
+    title: “Oops, I did it again” – Security of One-Time Signatures under Two-Message Attacks. 
     author:
       -
-        ins: National Institute of Standards and Technology (NIST)
-    date: 2020-10-29
+        ins: L. G. Bruinderink
+      -
+        ins: S. Hülsing
+    date: 2016
   NSA:
     target: https://media.defense.gov/2022/Sep/07/2003071834/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS_.PDF
     title: Commercial National Security Algorithm Suite 2.0 (CNSA 2.0) Cybersecurity Advisory (CSA)
@@ -121,47 +96,6 @@ informative:
       -
         ins: National Security Agency (NSA)
     date: 2022-09-07
-  Grover96:
-    target: https://doi.org/10.1145/237814.237866
-    title: A fast quantum mechanical algorithm for database search
-    author:
-      -
-        ins: L. Grover
-    date: 1996-07-01
-  BBBV97:
-    target: https://doi.org/10.1137/S0097539796300933
-    title: Strengths and Weaknesses of Quantum Computing
-    author:
-      -
-        ins: C. Bennett
-      -
-        ins: E. Bernstein
-      -
-        ins: G. Brassard
-      -
-        ins: U. Vazirani
-    date: 1997
-  DJB09:
-    target: http://cr.yp.to/papers.html#collisioncost
-    title: "Cost analysis of hash collisions: Will quantum computers make SHARCS obsolete?"
-    author:
-      -
-        ins: D. Bernstein
-    date: 2009-08-23
-  Fluhrer17:
-    target: https://eprint.iacr.org/2017/811.pdf
-    title: Reassessing Grover's Algorithm
-    author:
-      -
-        ins: S. Fluhrer
-    date: 2017-08-29
-  Zhandry15:
-    target: https://dl.acm.org/doi/10.5555/2871411.2871413
-    title: A note on the quantum collision and set equality problems
-    author:
-      -
-        ins: M. Zhandry
-    date: 2015-05-01
 
 --- abstract
 
@@ -179,7 +113,7 @@ certificate revocation lists.
 
 Hash-Based Signature (HBS) Schemes combine Merkle trees with One/Few Time
 Signatures (OTS/FTS) in order to provide digital signature schemes that remain
-secure even when quantum computers become available. Their security is well
+secure even when quantum computers become available. Their theoretic security is well
 understood and depends only on the security of the underlying hash function. As
 such they can serve as an important building block for quantum computer
 resistant information and communication technology.
@@ -225,8 +159,8 @@ classical alternatives, fast and minimal verification routines can be built.
 The major negative aspect is the statefulness of several HBS.  Private keys
 always have to be handled in a secure manner, but stateful HBS necessitate a
 special treatment of the private key in order to avoid security incidents like
-signature forgery [MCGREW], [NISTSP]. Therefore, for stateful HBS, a secure
-environment MUST be used for key generation and key management.
+signature forgery [MCGREW], [NIST-SP-800-208]. Therefore, for stateful HBS, a
+secure environment MUST be used for key generation and key management.
 
 Note that, in general, root CAs offer such a secure environment and the number
 of issued signatures (including signed certificates and CRLs) is often moderate
@@ -285,9 +219,9 @@ The HSS public key is defined as follows:
 
     HSS-LMS-HashSig-PublicKey ::= OCTET STRING
 
-See [RFC8554] for more information on the contents and format of an HSS public
-key. Note that the single-tree signature scheme LMS is instantiated as HSS with
-level L=1.
+See [NIST-SP-800-208] for more information on the contents and format of an HSS
+public key. Note that the single-tree signature scheme LMS is instantiated as
+HSS with level L=1.
 
 ##  XMSS Public Keys
 
@@ -311,8 +245,8 @@ The XMSS public key is defined as follows:
 
     XMSS-HashSig-PublicKey ::= OCTET STRING
 
-See [RFC8391] for more information on the contents and format of an XMSS public
-key.
+See [NIST-SP-800-208] for more information on the contents and format of an
+XMSS public key.
 
 ## XMSS^MT Public Keys
 
@@ -336,8 +270,8 @@ The XMSS^MT public key is defined as follows:
 
     XMSSMT-HashSig-PublicKey ::= OCTET STRING
 
-See [RFC8391] for more information on the contents and format of an XMSS^MT
-public key.
+See [NIST-SP-800-208] for more information on the contents and format of an
+XMSS^MT public key.
 
 ## SPHINCS+ Public Keys
 
@@ -381,7 +315,7 @@ The SPHINCS+ public key is defined as follows:
 
     SPHINCS-Plus-PublicKey ::= OCTET STRING
 
-See [SP-Sub] for more information on the contents and format of a SPHINCS+
+See [NIST-FIPS-205] for more information on the contents and format of a SPHINCS+
 public key.
 
 # Key Usage Bits
@@ -422,10 +356,11 @@ not hashed before processing. Then, a private key operation is performed to
 generate the signature value. For HSS, the signature value is described in
 section 6.4 of [RFC8554]. For XMSS and XMSS^MT the signature values are
 described in sections B.2 and C.2 of [RFC8391], respectively. For SPHINCS+ the
-signature values are described in [SP-Sub]. The octet string representing the
-signature is encoded directly in the BIT STRING without adding any additional
-ASN.1 wrapping. For the Certificate and CertificateList structures, the
-signature value is wrapped in the "signatureValue" BIT STRING field.
+signature values are described in [NIST-FIPS-205]. The octet string
+representing the signature is encoded directly in the BIT STRING without adding
+any additional ASN.1 wrapping. For the Certificate and CertificateList
+structures, the signature value is wrapped in the "signatureValue" BIT STRING
+field.
 
 ## HSS Signature Algorithm
 
@@ -441,7 +376,7 @@ The HSS signature is defined as follows:
 
     HSS-LMS-HashSig-Signature ::= OCTET STRING
 
-See [RFC8554] for more information on the contents and format of an HSS
+See [NIST-SP-800-208] for more information on the contents and format of an HSS
 signature.
 
 ## XMSS Signature Algorithm
@@ -459,8 +394,8 @@ The XMSS signature is defined as follows:
 
     XMSS-HashSig-Signature ::= OCTET STRING
 
-See [RFC8391] for more information on the contents and format of an XMSS
-signature.
+See [NIST-SP-800-208] for more information on the contents and format of an
+XMSS signature.
 
 ## XMSS^MT Signature Algorithm
 
@@ -477,8 +412,8 @@ The XMSS^MT signature is defined as follows:
 
     XMSSMT-HashSig-Signature ::= OCTET STRING
 
-See [RFC8391] for more information on the contents and format of an XMSS^MT
-signature.
+See [NIST-SP-800-208] for more information on the contents and format of an
+XMSS^MT signature.
 
 ## SPHINCS+ Signature Algorithm
 
@@ -499,7 +434,7 @@ The SPHINCS+ signature is defined as follows:
 
     SPHINCS-Plus-Signature ::= OCTET STRING
 
-See [SP-Sub] for more information on the contents and format of a SPHINCS+
+See [NIST-FIPS-205] for more information on the contents and format of a SPHINCS+
 signature.
 
 # ASN.1 Module
@@ -666,57 +601,15 @@ This ASN.1 Module builds upon the conventions established in [RFC5911].
 
 # Security Considerations
 
-## Algorithm Security Considerations
+The security requirements of the HBS standards [NIST-SP-800-208] and [NIST-FIPS-205] MUST be taken
+into account.
+For the stateful HBS it is crucial to stress the importance of a correct state management.
+If an attacker were able to obtain signatures for two different messages created using the same 
+OTS key, then it would become computationally feasible for that attacker to create 
+forgeries [BH16]. As noted in [MCGREW], extreme care needs to be taken in order to avoid the risk 
+that an OTS key will be reused accidentally. This is a new property that
+most developers will not be familiar with and requires careful handling. 
 
-The cryptographic security of the signatures generated by the algorithms
-mentioned in this document depends only on the hash algorithms used within the
-signature algorithms and the pre-hash algorithm used to create an X.509
-certificate's message digest. Grover's algorithm [Grover96] is a quantum search
-algorithm which gives a quadratic improvement in search time to brute-force
-pre-image attacks. The results of [BBBV97] show that this improvement is
-optimal, however [Fluhrer17] notes that Grover's algorithm doesn't parallelize
-well. Thus, given a bounded amount of time to perform the attack and using a
-conservative estimate of the performance of a real quantum computer, the
-pre-image quantum security of SHA-256 is closer to 190 bits. All parameter sets
-for the signature algorithms in this document currently use SHA-256 internally
-and thus have at least 128 bits of quantum pre-image resistance, or 190 bits
-using the security assumptions in [Fluhrer17].
-
-[Zhandry15] shows that hash collisions can be found using an algorithm with a
-lower bound on the number of oracle queries on the order of 2^(n/3) on the
-number of bits, however [DJB09] demonstrates that the quantum memory
-requirements would be much greater. Therefore a parameter set using SHA-256
-would have at least 128 bits of quantum collision-resistance as well as the
-pre-image resistance mentioned in the previous paragraph.
-
-Given the quantum collision and pre-image resistance of SHA-256 estimated
-above, the current parameter sets used by `id-alg-hss-lms-hashsig`,
-`id-alg-xmss-hashsig` and `id-alg-xmssmt-hashsig` provide 128 bits or more of
-quantum security. This is believed to be secure enough to protect X.509
-certificates for well beyond any reasonable certificate lifetime.
-
-## Implementation Security Considerations
-
-Implementations MUST protect the private keys. Compromise of the private keys
-may result in the ability to forge signatures. Along with the private key, the
-implementation MUST keep track of which leaf nodes in the tree have been used.
-Loss of integrity of this tracking data can cause a one-time key to be used
-more than once. As a result, when a private key and the tracking data are
-stored on non- volatile media or stored in a virtual machine environment, care
-must be taken to preserve confidentiality and integrity.
-
-The generation of private keys relies on random numbers. The use of inadequate
-pseudo-random number generators (PRNGs) to generate these values can result in
-little or no security. An attacker may find it much easier to reproduce the
-PRNG environment that produced the keys, searching the resulting small set of
-possibilities, rather than brute force searching the whole key space. The
-generation of quality random numbers is difficult. [RFC4086] offers important
-guidance in this area.
-
-The generation of hash-based signatures also depends on random numbers. While
-the consequences of an inadequate pseudo-random number generator (PRNG) to
-generate these values is much less severe than the generation of private keys,
-the guidance in [RFC4086] remains important.
 
 # IANA Considerations
 
@@ -730,6 +623,6 @@ Identifier" registry for the ASN.1 module in Section 6.
 
 Thanks for Russ Housley and Panos Kampanakis for helpful suggestions.
 
-This document uses a lot of text from similar documents ([RFC3279] and
+This document uses a lot of text from similar documents [NIST-SP-800-208], ([RFC3279] and
 [RFC8410]) as well as [RFC8708]. Thanks go to the authors of those documents.
 "Copying always makes things easier and less error prone" - [RFC8411].
