@@ -85,12 +85,12 @@ informative:
       -
         ins: J. Buchmann
     date: 2016-11-02
-  MCGREW:
+  BH16:
     target: https://eprint.iacr.org/2016/1042.pdf
     title: “Oops, I did it again” – Security of One-Time Signatures under Two-Message Attacks.
     author:
       -
-        ins: L. G. Bruinderink
+        ins: L. Bruinderink
       -
         ins: S. Hülsing
     date: 2016
