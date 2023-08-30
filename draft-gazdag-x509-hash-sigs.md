@@ -174,9 +174,9 @@ end-entity certificates to other entities (such as subordinate CAs) that use
 stateless signature schemes. Therefore, many root CAs should be able to handle
 the required state management, and stateful HBS offer a viable solution.
 
-As the above reasoning for root CAs usually does not apply for subordinate CAs, 
-it is NOT RECOMMENDED for subordinate CAs to use stateful HBS for issuing 
-end-entity certificates. Moreover, stateful HBS MUST NOT be used for end-entity 
+As the above reasoning for root CAs usually does not apply for subordinate CAs,
+it is NOT RECOMMENDED for subordinate CAs to use stateful HBS for issuing
+end-entity certificates. Moreover, stateful HBS MUST NOT be used for end-entity
 certificates.
 
 They are also appropriate in non-interactive contexts such as code signing.
@@ -640,9 +640,9 @@ Various strategies for a correct state management can be applied:
 - Use a stateful HBS instance only for a moderate number of signatures such
   that it is always practical to keep a consistent track record and be able to
   unambiguously trace back all generated signatures.
-  
-- Apply the state reservation strategy described in Section 5 of [MCGREW], where 
-  upcoming states are reserved in advance by the signer. In this way the number of 
+
+- Apply the state reservation strategy described in Section 5 of [MCGREW], where
+  upcoming states are reserved in advance by the signer. In this way the number of
   state synchronisations between nonvolatile and volatile memory is reduced.
 
 
