@@ -94,13 +94,20 @@ informative:
       -
         ins: S. Hülsing
     date: 2016
-  NSA:
+  CNSA2.0:
     target: https://media.defense.gov/2022/Sep/07/2003071834/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS_.PDF
     title: Commercial National Security Algorithm Suite 2.0 (CNSA 2.0) Cybersecurity Advisory (CSA)
     author:
       -
         ins: National Security Agency (NSA)
     date: 2022-09-07
+  ETSI-TR-103-692:
+    target: https://www.etsi.org/deliver/etsi_tr/103600_103699/103692/01.01.01_60/tr_103692v010101p.pdf
+    title: State management for stateful authentication mechanisms
+    author:
+      -
+        ins: European Telecommunications Standards Institute (ETSI)
+    date: 2021-11
 
 --- abstract
 
@@ -179,13 +186,12 @@ it is NOT RECOMMENDED for subordinate CAs to use stateful HBS for issuing
 end-entity certificates. Moreover, stateful HBS MUST NOT be used for end-entity
 certificates.
 
-They are also appropriate in non-interactive contexts such as code signing.
-Some manufactures use common and well-established key formats like X.509 for
-their code signing and update mechanisms. In this case, a secure key
+Yet stateful HBS are recommended in non-interactive contexts such as code
+signing. For example, see the recommendation for software and firmware signing
+in [CNSA2.0]. Some manufactures use common and well-established key formats like
+X.509 for their code signing and update mechanisms. In this case, a secure key
 environment as required can usually be established. Also there are multi-party
 IoT ecosystems where publicly trusted code signing certificates are useful.
-Further information about the security can be found in section 8. Also see
-[NSA] for a short comment e. g. on software and firmware signing.
 
 # Public Key Algorithms
 
@@ -625,9 +631,10 @@ For the stateful HBS (HSS, XMSS, XMSS^MT) it is crucial to stress the
 importance of a correct state management. If an attacker were able to obtain
 signatures for two different messages created using the same OTS key, then it
 would become computationally feasible for that attacker to create forgeries
-[BH16]. As noted in [MCGREW], extreme care needs to be taken in order to avoid
-the risk that an OTS key will be reused accidentally. This is a new requirement
-that most developers will not be familiar with and requires careful handling.
+[BH16]. As noted in [MCGREW] and [ETSI-TR-103-692], extreme care needs to be
+taken in order to avoid the risk that an OTS key will be reused accidentally.
+This is a new requirement that most developers will not be familiar with and
+requires careful handling.
 
 Various strategies for a correct state management can be applied:
 
