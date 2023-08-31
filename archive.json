@@ -1,0 +1,923 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2023-08-31T00:28:21.911210+00:00",
+  "repo": "x509-hbs/draft-gazdag-x509-hash-sigs",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    },
+    {
+      "name": "Final",
+      "description": "",
+      "color": "0490A2"
+    }
+  ],
+  "issues": [
+    {
+      "number": 1,
+      "id": "I_kwDOI2x9xc5dDity",
+      "title": "Align encodings to other RFCs and I-Ds",
+      "url": "https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/issues/1",
+      "state": "CLOSED",
+      "author": "fluppe2",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [
+        "fluppe2"
+      ],
+      "labels": [
+        "enhancement"
+      ],
+      "body": "See background and discussion here: https://mailarchive.ietf.org/arch/msg/spasm/uL2mFroexY7RYx4-ZNb-Y_7WaR0/",
+      "createdAt": "2023-01-29T09:40:30Z",
+      "updatedAt": "2023-03-03T07:53:22Z",
+      "closedAt": "2023-03-03T07:53:22Z",
+      "comments": []
+    },
+    {
+      "number": 2,
+      "id": "I_kwDOI2x9xc5dDi31",
+      "title": "Elaborate on use cases",
+      "url": "https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/issues/2",
+      "state": "CLOSED",
+      "author": "fluppe2",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [
+        "exception42"
+      ],
+      "labels": [
+        "enhancement"
+      ],
+      "body": "See background and discussion here: https://mailarchive.ietf.org/arch/msg/spasm/3XiW2VUdPN2It_0ToyqHQssnfL0/\r\n\r\nThe use cases must also discuss the possible key usage definitions (i.e. digitalSignature, nonRepudiation, keyCertSign, cRLSign) of the stateful hash-based signature schemes that are applicable to\r\n- Root-CA usage, and\r\n- code signing\r\n\r\nWhen elaborating on code signing a link/reference to CNSA 2.0 and their recommendations concerning firmware/software updates could be useful.\r\n\r\nhttps://media.defense.gov/2022/Sep/07/2003071834/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS_.PDF\r\n\r\nIs there a permalink for that (e.g. DOI)?",
+      "createdAt": "2023-01-29T09:43:02Z",
+      "updatedAt": "2023-08-30T13:30:12Z",
+      "closedAt": "2023-08-30T13:30:12Z",
+      "comments": []
+    },
+    {
+      "number": 4,
+      "id": "I_kwDOI2x9xc5f1rdN",
+      "title": "Track encodings of draft-housley-lamps-cms-sphincs-plus",
+      "url": "https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/issues/4",
+      "state": "OPEN",
+      "author": "fluppe2",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Compare and align encodings (OID, PK, Sig) once draft-housley-lamps-cms-sphincs-plus is finalized.",
+      "createdAt": "2023-03-03T04:08:20Z",
+      "updatedAt": "2023-03-03T04:08:39Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 5,
+      "id": "I_kwDOI2x9xc5nXNMJ",
+      "title": "Align author information",
+      "url": "https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/issues/5",
+      "state": "CLOSED",
+      "author": "fluppe2",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [
+        "BashiriK"
+      ],
+      "labels": [
+        "enhancement"
+      ],
+      "body": "New E-Mail of Daniel: daniel.vangeest.ietf@gmail.com",
+      "createdAt": "2023-05-31T12:39:42Z",
+      "updatedAt": "2023-06-01T13:22:48Z",
+      "closedAt": "2023-06-01T13:22:48Z",
+      "comments": []
+    },
+    {
+      "number": 6,
+      "id": "I_kwDOI2x9xc5nXRIk",
+      "title": "Finalize OIDs of algorithms",
+      "url": "https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/issues/6",
+      "state": "OPEN",
+      "author": "fluppe2",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [
+        "Final"
+      ],
+      "body": "",
+      "createdAt": "2023-05-31T12:49:06Z",
+      "updatedAt": "2023-05-31T12:49:28Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 7,
+      "id": "I_kwDOI2x9xc5nXVaB",
+      "title": "Align \"Key Usage Bits\" section to actual use case description",
+      "url": "https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/issues/7",
+      "state": "OPEN",
+      "author": "fluppe2",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Relates to #2 ",
+      "createdAt": "2023-05-31T12:58:33Z",
+      "updatedAt": "2023-05-31T12:58:33Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 8,
+      "id": "I_kwDOI2x9xc5nXWLt",
+      "title": "Revise section \"Security Considerations\"",
+      "url": "https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/issues/8",
+      "state": "CLOSED",
+      "author": "fluppe2",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [
+        "fluppe2"
+      ],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-05-31T13:00:17Z",
+      "updatedAt": "2023-08-30T13:29:40Z",
+      "closedAt": "2023-08-30T13:29:40Z",
+      "comments": []
+    },
+    {
+      "number": 11,
+      "id": "I_kwDOI2x9xc5vIH8m",
+      "title": "Cleanup",
+      "url": "https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/issues/11",
+      "state": "CLOSED",
+      "author": "fluppe2",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [
+        "fluppe2"
+      ],
+      "labels": [],
+      "body": "- Format the markdown file (consistent line breaks etc.)\r\n- Repair references",
+      "createdAt": "2023-08-24T04:52:14Z",
+      "updatedAt": "2023-08-24T05:25:34Z",
+      "closedAt": "2023-08-24T05:25:34Z",
+      "comments": []
+    }
+  ],
+  "pulls": [
+    {
+      "number": 3,
+      "id": "PR_kwDOI2x9xc5LL_Fa",
+      "title": "Encodings aligned to RFC8708 and draft-housley-lamps-cms-sphincs-plus-01",
+      "url": "https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/pull/3",
+      "state": "MERGED",
+      "author": "fluppe2",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-03-03T04:04:14Z",
+      "updatedAt": "2023-03-03T07:53:25Z",
+      "baseRepository": "x509-hbs/draft-gazdag-x509-hash-sigs",
+      "baseRefName": "main",
+      "baseRefOid": "f64e88e7415f224866757e56cd0f6eb3e63dac2d",
+      "headRepository": "x509-hbs/draft-gazdag-x509-hash-sigs",
+      "headRefName": "1-align-encodings",
+      "headRefOid": "1b1d7bf919e111cf138ee6120fc29160f6e2c7c5",
+      "closedAt": "2023-03-03T07:53:21Z",
+      "mergedAt": "2023-03-03T07:53:21Z",
+      "mergedBy": "fluppe2",
+      "mergeCommit": {
+        "oid": "343eeb3b4ad4dbcbbe966e44fb33e24593eb7674"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI2x9xc5O3xAI",
+          "commit": {
+            "abbreviatedOid": "1b1d7bf"
+          },
+          "author": "exception42",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "Changes are fine",
+          "createdAt": "2023-03-03T07:52:47Z",
+          "updatedAt": "2023-03-03T07:52:47Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "id": "PR_kwDOI2x9xc5R5sui",
+      "title": "Updated author information",
+      "url": "https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/pull/9",
+      "state": "MERGED",
+      "author": "BashiriK",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-06-01T13:15:54Z",
+      "updatedAt": "2023-06-01T13:22:59Z",
+      "baseRepository": "x509-hbs/draft-gazdag-x509-hash-sigs",
+      "baseRefName": "main",
+      "baseRefOid": "1c944d2694bfd7c29386284c29fc92f32c08ff0f",
+      "headRepository": "x509-hbs/draft-gazdag-x509-hash-sigs",
+      "headRefName": "5-align-author-information",
+      "headRefOid": "8d65ff5b78ed941016098020c504b9d10844d7b9",
+      "closedAt": "2023-06-01T13:22:47Z",
+      "mergedAt": "2023-06-01T13:22:47Z",
+      "mergedBy": "BashiriK",
+      "mergeCommit": {
+        "oid": "9cfc9e13f543aadc632f6361f6a22938ac54cd7a"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI2x9xc5WwK5z",
+          "commit": {
+            "abbreviatedOid": "8d65ff5"
+          },
+          "author": "fluppe2",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-06-01T13:22:19Z",
+          "updatedAt": "2023-06-01T13:22:19Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "id": "PR_kwDOI2x9xc5SySx1",
+      "title": "First attempt to improve the description on the use cases. See issue 2",
+      "url": "https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/pull/10",
+      "state": "MERGED",
+      "author": "exception42",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [
+        "exception42"
+      ],
+      "labels": [],
+      "body": "Some first rewriting for the use case description: https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/issues/2",
+      "createdAt": "2023-06-12T15:16:49Z",
+      "updatedAt": "2023-08-24T04:50:03Z",
+      "baseRepository": "x509-hbs/draft-gazdag-x509-hash-sigs",
+      "baseRefName": "main",
+      "baseRefOid": "9cfc9e13f543aadc632f6361f6a22938ac54cd7a",
+      "headRepository": "x509-hbs/draft-gazdag-x509-hash-sigs",
+      "headRefName": "working-branch-gazdag",
+      "headRefOid": "ddbd9ab9e21f552b43c983c9a2143510dd14b723",
+      "closedAt": "2023-08-23T14:22:51Z",
+      "mergedAt": "2023-08-23T14:22:50Z",
+      "mergedBy": "BashiriK",
+      "mergeCommit": {
+        "oid": "b47e9c9f8f2ea83dc1ef5aae2a74c9e10d1bbaf9"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI2x9xc5YK-yp",
+          "commit": {
+            "abbreviatedOid": "95d5bd7"
+          },
+          "author": "fluppe2",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-14T12:12:08Z",
+          "updatedAt": "2023-06-14T12:12:09Z",
+          "comments": [
+            {
+              "originalPosition": 86,
+              "body": "Add:\r\n- The number of issued signatures is often moderate for root CAs (including signing of CRLs)\r\n- Root CAs can handle the required state management\r\n- Root CAs may delegate OCSP services to be handled by an entity that signs with non-stateful signature schemes (if necessary)",
+              "createdAt": "2023-06-14T12:12:08Z",
+              "updatedAt": "2023-06-14T12:17:03Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YLAFN",
+          "commit": {
+            "abbreviatedOid": "95d5bd7"
+          },
+          "author": "fluppe2",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-14T12:15:08Z",
+          "updatedAt": "2023-06-14T12:15:08Z",
+          "comments": [
+            {
+              "originalPosition": 79,
+              "body": "Maybe add something like:\r\n- In comparison to other post-quantum signature schemes stateful ones can have (small signature + public key) sizes.",
+              "createdAt": "2023-06-14T12:15:08Z",
+              "updatedAt": "2023-06-14T12:15:08Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YLCSm",
+          "commit": {
+            "abbreviatedOid": "95d5bd7"
+          },
+          "author": "fluppe2",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-14T12:19:41Z",
+          "updatedAt": "2023-06-14T12:19:42Z",
+          "comments": [
+            {
+              "originalPosition": 56,
+              "body": "```suggestion\r\nafter signing to prevent reuse of OTS keys. Due to this statefulness of the private key\r\n```",
+              "createdAt": "2023-06-14T12:19:41Z",
+              "updatedAt": "2023-06-14T12:19:42Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YSMVh",
+          "commit": {
+            "abbreviatedOid": "95d5bd7"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-15T09:48:04Z",
+          "updatedAt": "2023-06-15T09:48:04Z",
+          "comments": [
+            {
+              "originalPosition": 36,
+              "body": "Im vorhergehenden Satz muss \"There\" ersetzt werden durch \"Their\"",
+              "createdAt": "2023-06-15T09:48:04Z",
+              "updatedAt": "2023-06-15T09:48:04Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YSdiw",
+          "commit": {
+            "abbreviatedOid": "95d5bd7"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-15T10:27:52Z",
+          "updatedAt": "2023-06-15T10:27:52Z",
+          "comments": [
+            {
+              "originalPosition": 63,
+              "body": "Ich finde den Aufbau dieses Absatzes nicht stimmig: \r\n- Der 1. und 3. Satz beschreibt HBS und listet einige Eigenschaften auf. \r\n- Der 2. und 4. Satz sagt etwas \u00fcber m\u00f6gliche use-cases. \r\nAu\u00dferdem: Dass HBS quantensicher ist, steht schon im vorherigen Abschnitt. Ich w\u00fcrde es hier nicht mehr wiederholen, da es im \"use cases-Kapitel auch erw\u00e4hnt wird. \r\n\r\nMein Gegenvorschlag:\r\nThe private key of HSS, XMSS and XMSS^MT is a finite collection of OTS keys, hence only a limited\r\nnumber of messages can be signed and the private key's state must be updated and persisted\r\nafter signing to prevent reuse of OTS keys. While the right selection of algorithm\r\nparameters would allow a private key to sign a virtually unbounded number of messages (e.g. 2^60),\r\nthis is at the cost of a larger signature size and longer signing time. \r\n\r\nDue to the statefulness of the private key of HSS, XMSS and XMSS^MT and the limited number of signatures that can be created, these signature algorithms might not be appropriate for use in interactive protocols. However, in some use case scenarios the deployment of these signature algorithms may be appropriate. Such use cases are described and discussed in the next section. ",
+              "createdAt": "2023-06-15T10:27:52Z",
+              "updatedAt": "2023-06-15T10:27:52Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YSfRZ",
+          "commit": {
+            "abbreviatedOid": "95d5bd7"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-15T10:30:57Z",
+          "updatedAt": "2023-06-15T10:30:57Z",
+          "comments": [
+            {
+              "originalPosition": 66,
+              "body": "Im Satz \"Thus SPHINCS+...\" wird \"use-cases\" geschrieben. Wir sollten uns entscheiden, ob wir es mit oder ohne Bindestrich schreiben und konsistent bleiben :-)",
+              "createdAt": "2023-06-15T10:30:57Z",
+              "updatedAt": "2023-06-15T10:30:57Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YSgGD",
+          "commit": {
+            "abbreviatedOid": "95d5bd7"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-15T10:32:30Z",
+          "updatedAt": "2023-06-15T10:32:31Z",
+          "comments": [
+            {
+              "originalPosition": 77,
+              "body": "\", a secure instantiation of HBS\" ersetzen durch \", and a secure instantiation of HBS\"",
+              "createdAt": "2023-06-15T10:32:30Z",
+              "updatedAt": "2023-06-15T10:32:31Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YSlsP",
+          "commit": {
+            "abbreviatedOid": "95d5bd7"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-15T10:46:40Z",
+          "updatedAt": "2023-06-15T10:46:40Z",
+          "comments": [
+            {
+              "originalPosition": 68,
+              "body": "16 bytes ist auch m\u00f6glich (z.B. SPHINCS+-128s)",
+              "createdAt": "2023-06-15T10:46:40Z",
+              "updatedAt": "2023-06-15T10:46:40Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YSoXt",
+          "commit": {
+            "abbreviatedOid": "95d5bd7"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-15T10:53:35Z",
+          "updatedAt": "2023-06-15T10:53:36Z",
+          "comments": [
+            {
+              "originalPosition": 79,
+              "body": "Nach dem Satz \"... secure hash function exists.\" w\u00fcrde ich Folgendes einf\u00fcgen:\r\n\r\nMoreover, HBS offer small public key sizes, and, in comparison to other post-quantum signature schemes, the stateful HBS offer relatively small signauture sizes (for certain parameter sets). ",
+              "createdAt": "2023-06-15T10:53:35Z",
+              "updatedAt": "2023-06-15T10:54:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YSrRV",
+          "commit": {
+            "abbreviatedOid": "95d5bd7"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-15T10:56:15Z",
+          "updatedAt": "2023-06-15T10:56:15Z",
+          "comments": [
+            {
+              "originalPosition": 80,
+              "body": "Nur ein \"l\" bei \"statefullness\"? Bin mir da nicht so sicher. Man schreibt glaub ich auf jeden Fall \"stateful\".",
+              "createdAt": "2023-06-15T10:56:15Z",
+              "updatedAt": "2023-06-15T10:56:15Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YS_83",
+          "commit": {
+            "abbreviatedOid": "95d5bd7"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-15T11:44:27Z",
+          "updatedAt": "2023-06-15T11:44:27Z",
+          "comments": [
+            {
+              "originalPosition": 86,
+              "body": "Mein Vorschlag: \r\n\r\n... in order to avoid security incidents like signature forgery [MCGREW], [NISTSP]. Therefore, for stateful HBS, a secure environment MUST be used for key generation and key management.\r\n\r\nNote that, in general, root CAs offer such a secure environment and the number of issued signatures (including signed certificates and CRLs) is often moderate due to the fact that many root CAs delegate OCSP services or the signing of end-entity certificates to other entities (such as subordinate CAs) that use non-stateful signature schemes for their signatures. Therefore, many root CAs should be able to handle the required state management, and stateful HBS are still a proper solution for usage there. \r\n\r\nHBS MAY also be used for subordinate CA certificates, but special and careful consideration MUST be taken into account for proper key management. HBS MUST NOT be used for end-entity certificates.",
+              "createdAt": "2023-06-15T11:44:27Z",
+              "updatedAt": "2023-06-15T13:01:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YZTUY",
+          "commit": {
+            "abbreviatedOid": "357131f"
+          },
+          "author": "fluppe2",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-16T08:51:11Z",
+          "updatedAt": "2023-06-16T08:51:11Z",
+          "comments": [
+            {
+              "originalPosition": 36,
+              "body": "Typo behoben",
+              "createdAt": "2023-06-16T08:51:11Z",
+              "updatedAt": "2023-06-16T08:51:11Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YZT4B",
+          "commit": {
+            "abbreviatedOid": "357131f"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-16T08:52:38Z",
+          "updatedAt": "2023-06-16T08:52:38Z",
+          "comments": [
+            {
+              "originalPosition": 63,
+              "body": "Ich finde den Aufbau dieses Absatzes nicht stimmig:\r\nDer 1. und 3. Satz beschreibt HBS und listet einige Eigenschaften auf.\r\nDer 2. und 4. Satz sagt etwas \u00fcber m\u00f6gliche use-cases.\r\nAu\u00dferdem: Dass HBS quantensicher ist, steht schon im vorherigen Abschnitt. Ich w\u00fcrde es hier nicht mehr\r\nwiederholen, da es im \"use cases-Kapitel auch erw\u00e4hnt wird.\r\n\r\nMein Gegenvorschlag:\r\nThe private key of HSS, XMSS and XMSS^MT is a finite collection of OTS keys, hence only a limited\r\nnumber of messages can be signed and the private key's state must be updated and persisted after signing to prevent reuse of OTS keys. While the right selection of algorithm parameters would allow a private key to sign a virtually unbounded number of messages (e.g. 2^60), this is at the cost of a larger signature size and longer signing time. Due to the statefulness of the private key of HSS, XMSS and XMSS^MT and the limited number of signatures that can be created, these signature algorithms might not be appropriate for use in interactive protocols. However, in some use case scenarios the deployment of these signature algorithms may be appropriate. Such use cases are described and discussed later in Section 4.",
+              "createdAt": "2023-06-16T08:52:38Z",
+              "updatedAt": "2023-06-16T09:05:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YZXdF",
+          "commit": {
+            "abbreviatedOid": "db30679"
+          },
+          "author": "fluppe2",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-16T09:01:37Z",
+          "updatedAt": "2023-06-16T09:01:38Z",
+          "comments": [
+            {
+              "originalPosition": 74,
+              "body": "Einheitlich ohne Bindestrich.",
+              "createdAt": "2023-06-16T09:01:37Z",
+              "updatedAt": "2023-06-16T09:01:38Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YZXrq",
+          "commit": {
+            "abbreviatedOid": "db30679"
+          },
+          "author": "fluppe2",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-16T09:02:12Z",
+          "updatedAt": "2023-06-16T09:02:13Z",
+          "comments": [
+            {
+              "originalPosition": 83,
+              "body": "Add 16 Bytes as possible value for \"n\" (see SPHINCS+-128)",
+              "createdAt": "2023-06-16T09:02:12Z",
+              "updatedAt": "2023-06-16T09:02:13Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YZaIa",
+          "commit": {
+            "abbreviatedOid": "db30679"
+          },
+          "author": "fluppe2",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-16T09:08:22Z",
+          "updatedAt": "2023-06-16T09:08:23Z",
+          "comments": [
+            {
+              "originalPosition": 92,
+              "body": "```suggestion\r\n# Use Cases of HBS in X.509 {#use-cases-hbs-x509}\r\n```\r\nAdd section label for dynamic referencing.",
+              "createdAt": "2023-06-16T09:08:22Z",
+              "updatedAt": "2023-06-16T09:08:23Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YZajA",
+          "commit": {
+            "abbreviatedOid": "db30679"
+          },
+          "author": "fluppe2",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-16T09:09:27Z",
+          "updatedAt": "2023-06-16T09:09:27Z",
+          "comments": [
+            {
+              "originalPosition": 69,
+              "body": "```suggestion\r\nThe private key of HSS, XMSS and XMSS^MT is a finite collection of OTS keys, hence only a limited\r\nnumber of messages can be signed and the private key's state must be updated and persisted after signing to prevent reuse of OTS keys. While the right selection of algorithm parameters would allow a private key to sign a virtually unbounded number of messages (e.g. 2^60), this is at the cost of a larger signature size and longer signing time. Due to the statefulness of the private key of HSS, XMSS and XMSS^MT and the limited number of signatures that can be created, these signature algorithms might not be appropriate for use in interactive protocols. However, in some use case scenarios the deployment of these signature algorithms may be appropriate. Such use cases are described and discussed later in {{use-cases-hbs-x509}}.\r\n```\r\n@exception42 : I have taken Kaveh's comment and suggested it (also added a dynamic reference). Please commit suggestion if you are ok with this.",
+              "createdAt": "2023-06-16T09:09:27Z",
+              "updatedAt": "2023-06-16T09:12:01Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YZcJJ",
+          "commit": {
+            "abbreviatedOid": "db30679"
+          },
+          "author": "fluppe2",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-16T09:13:04Z",
+          "updatedAt": "2023-06-16T09:13:05Z",
+          "comments": [
+            {
+              "originalPosition": 97,
+              "body": "```suggestion\r\nand a secure instantiation of HBS may always be built as long as a cryptographically\r\n```\r\n@exception42 : I've taken Kaveh's comment to submit a suggestion. Please commit if ok.",
+              "createdAt": "2023-06-16T09:13:04Z",
+              "updatedAt": "2023-06-16T09:13:05Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YZdFr",
+          "commit": {
+            "abbreviatedOid": "db30679"
+          },
+          "author": "fluppe2",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-16T09:15:28Z",
+          "updatedAt": "2023-06-16T09:15:29Z",
+          "comments": [
+            {
+              "originalPosition": 98,
+              "body": "```suggestion\r\nsecure hash function exists. Moreover, HBS offer small public key sizes, and, in comparison to other post-quantum signature schemes, the stateful HBS can offer relatively small signature sizes (for certain parameter sets). While key generation and signature generation may\r\n```\r\n@exception42 : Taken Kaveh's comment and submitted suggestion. Please commit if ok.",
+              "createdAt": "2023-06-16T09:15:29Z",
+              "updatedAt": "2023-06-16T09:15:29Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YZdsW",
+          "commit": {
+            "abbreviatedOid": "db30679"
+          },
+          "author": "fluppe2",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-16T09:17:01Z",
+          "updatedAt": "2023-06-16T09:17:02Z",
+          "comments": [
+            {
+              "originalPosition": 100,
+              "body": "```suggestion\r\ncan be built. The major negative aspect is the statefulness of several HBS.\r\n```\r\n@exception42 : Commit if ok.",
+              "createdAt": "2023-06-16T09:17:01Z",
+              "updatedAt": "2023-06-16T09:17:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YZgCW",
+          "commit": {
+            "abbreviatedOid": "db30679"
+          },
+          "author": "fluppe2",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-16T09:23:03Z",
+          "updatedAt": "2023-06-16T09:23:04Z",
+          "comments": [
+            {
+              "originalPosition": 108,
+              "body": "```suggestion\r\nsecurity incidents like signature forgery [MCGREW], [NISTSP]. Therefore, for stateful HBS, a secure environment MUST be used for key generation and key management.\r\n\r\nNote that, in general, root CAs offer such a secure environment and the number of issued signatures (including signed certificates and CRLs) is often moderate due to the fact that many root CAs delegate OCSP services or the signing of end-entity certificates to other entities (such as subordinate CAs) that use stateless signature schemes. Therefore, many root CAs should be able to handle the required state management, and stateful HBS offer a viable solution.\r\n\r\nHBS MAY also be used by subordinate CAs for issuing certificates, but special and careful consideration MUST be taken into account for proper key management. HBS MUST NOT be used for end-entity certificates.\r\n```\r\n@exception42 : Taken Kaveh's comment and turned into suggestion. Please commit if ok.",
+              "createdAt": "2023-06-16T09:23:04Z",
+              "updatedAt": "2023-06-16T09:23:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YZhrV",
+          "commit": {
+            "abbreviatedOid": "db30679"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-16T09:27:18Z",
+          "updatedAt": "2023-06-16T09:27:19Z",
+          "comments": [
+            {
+              "originalPosition": 21,
+              "body": "https://doi.org/10.6028/NIST.SP.800-208",
+              "createdAt": "2023-06-16T09:27:18Z",
+              "updatedAt": "2023-06-16T09:27:19Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5YZiJt",
+          "commit": {
+            "abbreviatedOid": "db30679"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-06-16T09:28:36Z",
+          "updatedAt": "2023-06-16T09:28:36Z",
+          "comments": [
+            {
+              "originalPosition": 27,
+              "body": "https://media.defense.gov/2022/Sep/07/2003071834/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS_.PDF",
+              "createdAt": "2023-06-16T09:28:36Z",
+              "updatedAt": "2023-06-16T09:28:36Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5e39wq",
+          "commit": {
+            "abbreviatedOid": "ddbd9ab"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-08-23T14:22:38Z",
+          "updatedAt": "2023-08-23T14:22:38Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "id": "PR_kwDOI2x9xc5Yx5Bz",
+      "title": "8 revise section security considerations",
+      "url": "https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/pull/12",
+      "state": "MERGED",
+      "author": "fluppe2",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Tried to adress security considerations phrased in\r\n\r\nhttps://mailarchive.ietf.org/arch/msg/spasm/3XiW2VUdPN2It_0ToyqHQssnfL0/\r\n\r\nand stress the importance of \"unusual\" backup and restore management.",
+      "createdAt": "2023-08-25T10:05:31Z",
+      "updatedAt": "2023-08-30T13:29:39Z",
+      "baseRepository": "x509-hbs/draft-gazdag-x509-hash-sigs",
+      "baseRefName": "main",
+      "baseRefOid": "647bb52f2e58bd554ecd06aa6cefe09c59428382",
+      "headRepository": "x509-hbs/draft-gazdag-x509-hash-sigs",
+      "headRefName": "8-revise-section-security-considerations",
+      "headRefOid": "435b58e75a51231318e1b10496c590f59f6e4006",
+      "closedAt": "2023-08-30T13:29:39Z",
+      "mergedAt": "2023-08-30T13:29:39Z",
+      "mergedBy": "fluppe2",
+      "mergeCommit": {
+        "oid": "7c8214e3bfd90dde95291ada3225104ffa911f4a"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI2x9xc5fF_lw",
+          "commit": {
+            "abbreviatedOid": "5c439d5"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-08-25T10:19:13Z",
+          "updatedAt": "2023-08-25T10:19:13Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "```suggestion\r\n    email: kaveh.bashiri.ietf@gmail.com\r\n```",
+              "createdAt": "2023-08-25T10:19:13Z",
+              "updatedAt": "2023-08-25T10:19:13Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5fMUIi",
+          "commit": {
+            "abbreviatedOid": "f10277e"
+          },
+          "author": "csosto-pk",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-08-27T02:18:05Z",
+          "updatedAt": "2023-08-27T02:18:35Z",
+          "comments": [
+            {
+              "originalPosition": 446,
+              "body": "I suggest to also put in the state reservation mechanism too. It is explained in section 5 of [MCGREW]. ",
+              "createdAt": "2023-08-27T02:18:05Z",
+              "updatedAt": "2023-08-27T02:18:35Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5fh3v2",
+          "commit": {
+            "abbreviatedOid": "f10277e"
+          },
+          "author": "fluppe2",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-08-30T13:28:29Z",
+          "updatedAt": "2023-08-30T13:28:29Z",
+          "comments": [
+            {
+              "originalPosition": 446,
+              "body": "Added to the list of strategies. See https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/pull/12/commits/610f419cd21d94a5eb8c0bd5dce90e5512d91289",
+              "createdAt": "2023-08-30T13:28:29Z",
+              "updatedAt": "2023-08-30T13:28:29Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOI2x9xc5fh4P7",
+          "commit": {
+            "abbreviatedOid": "435b58e"
+          },
+          "author": "exception42",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "All changes seem fine",
+          "createdAt": "2023-08-30T13:29:26Z",
+          "updatedAt": "2023-08-30T13:29:26Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "id": "PR_kwDOI2x9xc5ZJZ0q",
+      "title": "Updated key usage requirements ",
+      "url": "https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/pull/13",
+      "state": "OPEN",
+      "author": "fluppe2",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "To match requirements in use case description and RFC8708. However, we are more restrictive than RFC8708 in that we do not allow stateful HBS in end-entity certificates.",
+      "createdAt": "2023-08-30T14:25:40Z",
+      "updatedAt": "2023-08-30T14:25:40Z",
+      "baseRepository": "x509-hbs/draft-gazdag-x509-hash-sigs",
+      "baseRefName": "main",
+      "baseRefOid": "7c8214e3bfd90dde95291ada3225104ffa911f4a",
+      "headRepository": "x509-hbs/draft-gazdag-x509-hash-sigs",
+      "headRefName": "7-align-key-usage-bits-section-to-actual-use-case-description",
+      "headRefOid": "925dfbd07777df68843599d780ffeadcdcc48a28",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    }
+  ]
+}
