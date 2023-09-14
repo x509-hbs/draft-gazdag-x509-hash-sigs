@@ -401,8 +401,8 @@ The HSS signature is defined as follows:
 
     HSS-LMS-HashSig-Signature ::= OCTET STRING
 
-See [NIST-SP-800-208] for more information on the contents and format of an HSS
-signature.
+See [NIST-SP-800-208] and [RFC8554] for more information on the contents and
+format of an HSS signature.
 
 ## XMSS Signature Algorithm
 
@@ -440,8 +440,8 @@ The XMSS^MT signature is defined as follows:
 
     XMSSMT-HashSig-Signature ::= OCTET STRING
 
-See [NIST-SP-800-208] for more information on the contents and format of an
-XMSS^MT signature.
+See [NIST-SP-800-208] and [RFC8391] for more information on the contents and
+format of an XMSS^MT signature.
 
 The signature generation MUST be performed according to 7.2 of
 [NIST-SP-800-208].
