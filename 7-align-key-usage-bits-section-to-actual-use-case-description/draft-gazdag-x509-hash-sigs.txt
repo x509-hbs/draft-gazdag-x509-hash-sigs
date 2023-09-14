@@ -5,14 +5,14 @@
 LAMPS - Limited Additional Mechanisms for PKIX and SMIME      K. Bashiri
 Internet-Draft                                                       BSI
 Intended status: Informational                                S. Fluhrer
-Expires: 2 March 2024                                      Cisco Systems
+Expires: 17 March 2024                                     Cisco Systems
                                                                S. Gazdag
                                                               genua GmbH
                                                             D. Van Geest
                                                                         
                                                              S. Kousidis
                                                                      BSI
-                                                          30 August 2023
+                                                       14 September 2023
 
 
   Internet X.509 Public Key Infrastructure: Algorithm Identifiers for
@@ -60,7 +60,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 March 2024.
+   This Internet-Draft will expire on 17 March 2024.
 
 Copyright Notice
 
@@ -186,10 +186,8 @@ Table of Contents
    contexts.  For example, see the recommendations for software and
    firmware signing in [CNSA2.0].  Some manufactures use common and
    well-established key formats like X.509 for their code signing and
-   update mechanisms.  In this case, a secure environment as required
-   can usually be established.  Also there are multi-party IoT
-   ecosystems where publicly trusted code signing certificates are
-   useful.
+   update mechanisms.  Also there are multi-party IoT ecosystems where
+   publicly trusted code signing certificates are useful.
 
 4.  Public Key Algorithms
 
