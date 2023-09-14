@@ -190,8 +190,7 @@ However, stateful HBS MAY be used for code signing certificates, since they are
 suitable and recommended in such non-interactive contexts. For example, see the
 recommendations for software and firmware signing in [CNSA2.0]. Some
 manufactures use common and well-established key formats like X.509 for their
-code signing and update mechanisms. In this case, a secure environment as
-required can usually be established. Also there are multi-party IoT ecosystems
+code signing and update mechanisms. Also there are multi-party IoT ecosystems
 where publicly trusted code signing certificates are useful.
 
 # Public Key Algorithms
