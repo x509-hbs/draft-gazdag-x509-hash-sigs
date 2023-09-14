@@ -405,8 +405,8 @@ Table of Contents
 
    HSS-LMS-HashSig-Signature ::= OCTET STRING
 
-   See [NIST-SP-800-208] for more information on the contents and format
-   of an HSS signature.
+   See [NIST-SP-800-208] and [RFC8554] for more information on the
+   contents and format of an HSS signature.
 
 6.2.  XMSS Signature Algorithm
 
@@ -444,8 +444,8 @@ Table of Contents
 
    XMSSMT-HashSig-Signature ::= OCTET STRING
 
-   See [NIST-SP-800-208] for more information on the contents and format
-   of an XMSS^MT signature.
+   See [NIST-SP-800-208] and [RFC8391] for more information on the
+   contents and format of an XMSS^MT signature.
 
    The signature generation MUST be performed according to 7.2 of
    [NIST-SP-800-208].
