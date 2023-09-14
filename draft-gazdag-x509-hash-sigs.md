@@ -186,12 +186,12 @@ it is NOT RECOMMENDED for subordinate CAs to use stateful HBS for issuing
 end-entity certificates. Moreover, stateful HBS MUST NOT be used for end-entity
 certificates.
 
-Yet stateful HBS are recommended in non-interactive contexts such as code
-signing. For example, see the recommendation for software and firmware signing
-in [CNSA2.0]. Some manufactures use common and well-established key formats like
-X.509 for their code signing and update mechanisms. In this case, a secure key
-environment as required can usually be established. Also there are multi-party
-IoT ecosystems where publicly trusted code signing certificates are useful.
+However, stateful HBS MAY be used for code signing certificates, since they are
+suitable and recommended in such non-interactive contexts. For example, see the
+recommendations for software and firmware signing in [CNSA2.0]. Some
+manufactures use common and well-established key formats like X.509 for their
+code signing and update mechanisms. Also there are multi-party IoT ecosystems
+where publicly trusted code signing certificates are useful.
 
 # Public Key Algorithms
 
@@ -333,26 +333,39 @@ SLH-DSA public key.
 # Key Usage Bits
 
 The intended application for the key is indicated in the keyUsage certificate
-extension.
+extension [RFC5280].
 
 If the keyUsage extension is present in an end-entity certificate that
-indicates id-alg-xmss-hashsig or id-alg-xmssmt-hashsig in SubjectPublicKeyInfo,
-then the keyUsage extension MUST contain one or both of the following values:
+indicates `id-alg-sphincs-plus-128`, `id-alg-sphincs-plus-192`, or
+`id-alg-sphincs-plus-256`, then it MUST contain at least one of the following
+values:
 
-    nonRepudiation; and
+    nonRepudiation; or
+    digitalSignature.
+
+If the keyUsage extension is present in a code signing certificate that
+indicates `id-alg-hss-lms-hashsig`, `id-alg-xmss-hashsig`,
+`id-alg-xmssmt-hashsig`, `id-alg-sphincs-plus-128`, `id-alg-sphincs-plus-192`,
+or `id-alg-sphincs-plus-256`, then it MUST contain at least one of the
+following values:
+
+    nonRepudiation; or
     digitalSignature.
 
 If the keyUsage extension is present in a certification authority certificate
-that indicates id-alg-xmss-hashsig or id-alg-xmssmt-hashsig, then the keyUsage
-extension MUST contain one or more of the following values:
+that indicates `id-alg-hss-lms-hashsig`, `id-alg-xmss-hashsig`,
+`id-alg-xmssmt-hashsig`, `id-alg-sphincs-plus-128`, `id-alg-sphincs-plus-192`,
+or `id-alg-sphincs-plus-256`, then it MUST contain at least one of the
+following values:
 
-    nonRepudiation;
-    digitalSignature;
-    keyCertSign; and
+    nonRepudiation; or
+    digitalSignature; or
+    keyCertSign; or
     cRLSign.
 
-[RFC8708] defines the key usage for id-alg-hss-lms-hashsig, which is the same
-as for the keys above.
+Note that for certificates that indicate `id-alg-hss-lms-hashsig` the above
+definitions are more restrictive than the requirement defined in Section 4 of
+[RFC8708].
 
 # Signature Algorithms
 
@@ -388,8 +401,8 @@ The HSS signature is defined as follows:
 
     HSS-LMS-HashSig-Signature ::= OCTET STRING
 
-See [NIST-SP-800-208] for more information on the contents and format of an HSS
-signature.
+See [NIST-SP-800-208] and [RFC8554] for more information on the contents and
+format of an HSS signature.
 
 ## XMSS Signature Algorithm
 
@@ -427,8 +440,8 @@ The XMSS^MT signature is defined as follows:
 
     XMSSMT-HashSig-Signature ::= OCTET STRING
 
-See [NIST-SP-800-208] for more information on the contents and format of an
-XMSS^MT signature.
+See [NIST-SP-800-208] and [RFC8391] for more information on the contents and
+format of an XMSS^MT signature.
 
 The signature generation MUST be performed according to 7.2 of
 [NIST-SP-800-208].
