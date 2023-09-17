@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-08-31T00:28:21.911210+00:00",
+  "timestamp": "2023-09-17T00:30:38.325369+00:00",
   "repo": "x509-hbs/draft-gazdag-x509-hash-sigs",
   "labels": [
     {
@@ -154,15 +154,15 @@
       "id": "I_kwDOI2x9xc5nXVaB",
       "title": "Align \"Key Usage Bits\" section to actual use case description",
       "url": "https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/issues/7",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "fluppe2",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "Relates to #2 ",
       "createdAt": "2023-05-31T12:58:33Z",
-      "updatedAt": "2023-05-31T12:58:33Z",
-      "closedAt": null,
+      "updatedAt": "2023-09-14T12:55:47Z",
+      "closedAt": "2023-09-14T12:55:47Z",
       "comments": []
     },
     {
@@ -199,6 +199,22 @@
       "createdAt": "2023-08-24T04:52:14Z",
       "updatedAt": "2023-08-24T05:25:34Z",
       "closedAt": "2023-08-24T05:25:34Z",
+      "comments": []
+    },
+    {
+      "number": 14,
+      "id": "I_kwDOI2x9xc5xCrxO",
+      "title": "Key usage for HSS/LMS more restrictive than RFC8708",
+      "url": "https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/issues/14",
+      "state": "OPEN",
+      "author": "fluppe2",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Follow and eventually take up on the key usage definitions in the draft in comparison to Section 4 in RFC8708.",
+      "createdAt": "2023-09-14T13:00:48Z",
+      "updatedAt": "2023-09-14T13:00:48Z",
+      "closedAt": null,
       "comments": []
     }
   ],
@@ -803,7 +819,7 @@
       "labels": [],
       "body": "Tried to adress security considerations phrased in\r\n\r\nhttps://mailarchive.ietf.org/arch/msg/spasm/3XiW2VUdPN2It_0ToyqHQssnfL0/\r\n\r\nand stress the importance of \"unusual\" backup and restore management.",
       "createdAt": "2023-08-25T10:05:31Z",
-      "updatedAt": "2023-08-30T13:29:39Z",
+      "updatedAt": "2023-09-14T12:57:28Z",
       "baseRepository": "x509-hbs/draft-gazdag-x509-hash-sigs",
       "baseRefName": "main",
       "baseRefOid": "647bb52f2e58bd554ecd06aa6cefe09c59428382",
@@ -898,26 +914,42 @@
       "id": "PR_kwDOI2x9xc5ZJZ0q",
       "title": "Updated key usage requirements ",
       "url": "https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/pull/13",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "fluppe2",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "To match requirements in use case description and RFC8708. However, we are more restrictive than RFC8708 in that we do not allow stateful HBS in end-entity certificates.",
       "createdAt": "2023-08-30T14:25:40Z",
-      "updatedAt": "2023-08-30T14:25:40Z",
+      "updatedAt": "2023-09-14T12:57:31Z",
       "baseRepository": "x509-hbs/draft-gazdag-x509-hash-sigs",
       "baseRefName": "main",
       "baseRefOid": "7c8214e3bfd90dde95291ada3225104ffa911f4a",
       "headRepository": "x509-hbs/draft-gazdag-x509-hash-sigs",
       "headRefName": "7-align-key-usage-bits-section-to-actual-use-case-description",
-      "headRefOid": "925dfbd07777df68843599d780ffeadcdcc48a28",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "376cd17b6769c4b3fd3952a7fec87c642382e15d",
+      "closedAt": "2023-09-14T12:55:46Z",
+      "mergedAt": "2023-09-14T12:55:46Z",
+      "mergedBy": "fluppe2",
+      "mergeCommit": {
+        "oid": "526917b26ed7236bf731fc013b95aada54f05b89"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOI2x9xc5g91re",
+          "commit": {
+            "abbreviatedOid": "376cd17"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-09-14T12:55:27Z",
+          "updatedAt": "2023-09-14T12:55:27Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
