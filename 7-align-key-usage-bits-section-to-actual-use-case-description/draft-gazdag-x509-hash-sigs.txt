@@ -5,14 +5,14 @@
 LAMPS - Limited Additional Mechanisms for PKIX and SMIME      K. Bashiri
 Internet-Draft                                                       BSI
 Intended status: Informational                                S. Fluhrer
-Expires: 17 March 2024                                     Cisco Systems
+Expires: 8 April 2024                                      Cisco Systems
                                                                S. Gazdag
                                                               genua GmbH
                                                             D. Van Geest
                                                                         
                                                              S. Kousidis
                                                                      BSI
-                                                       14 September 2023
+                                                          6 October 2023
 
 
   Internet X.509 Public Key Infrastructure: Algorithm Identifiers for
@@ -60,7 +60,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 17 March 2024.
+   This Internet-Draft will expire on 8 April 2024.
 
 Copyright Notice
 
@@ -186,8 +186,10 @@ Table of Contents
    contexts.  For example, see the recommendations for software and
    firmware signing in [CNSA2.0].  Some manufactures use common and
    well-established key formats like X.509 for their code signing and
-   update mechanisms.  Also there are multi-party IoT ecosystems where
-   publicly trusted code signing certificates are useful.
+   update mechanisms.  In this case, a secure environment as required
+   can usually be established.  Also there are multi-party IoT
+   ecosystems where publicly trusted code signing certificates are
+   useful.
 
 4.  Public Key Algorithms
 
@@ -405,8 +407,8 @@ Table of Contents
 
    HSS-LMS-HashSig-Signature ::= OCTET STRING
 
-   See [NIST-SP-800-208] and [RFC8554] for more information on the
-   contents and format of an HSS signature.
+   See [NIST-SP-800-208] for more information on the contents and format
+   of an HSS signature.
 
 6.2.  XMSS Signature Algorithm
 
@@ -444,8 +446,8 @@ Table of Contents
 
    XMSSMT-HashSig-Signature ::= OCTET STRING
 
-   See [NIST-SP-800-208] and [RFC8391] for more information on the
-   contents and format of an XMSS^MT signature.
+   See [NIST-SP-800-208] for more information on the contents and format
+   of an XMSS^MT signature.
 
    The signature generation MUST be performed according to 7.2 of
    [NIST-SP-800-208].
@@ -681,16 +683,16 @@ END
    of signing key pairs.
 
    Usual backup and restore strategies when using a stateless signature
-   scheme (e.g.  SLH-DSA) is to duplicate private keying material and to
-   operate redundant signing devices or to store and safeguard a copy of
-   the private keying material such that it can be used to set up a new
-   signing device in case of technical difficulties.
+   scheme (e.g.  SLH-DSA) are to duplicate private keying material and
+   to operate redundant signing devices or to store and safeguard a copy
+   of the private keying material such that it can be used to set up a
+   new signing device in case of technical difficulties.
 
    For stateful HBS such straightforward backup and restore strategies
    will lead to OTS reuse with high probability as a correct state
    management is not guaranteed.  Strategies for maintaining
-   availability and keeping a correct state are described in 7 of
-   [NIST-SP-800-208].
+   availability and keeping a correct state are described in Section 7
+   of [NIST-SP-800-208].
 
 11.  IANA Considerations
 
