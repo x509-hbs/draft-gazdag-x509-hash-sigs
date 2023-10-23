@@ -5,14 +5,14 @@
 LAMPS - Limited Additional Mechanisms for PKIX and SMIME      K. Bashiri
 Internet-Draft                                                       BSI
 Intended status: Informational                                S. Fluhrer
-Expires: 17 March 2024                                     Cisco Systems
+Expires: 25 April 2024                                     Cisco Systems
                                                                S. Gazdag
                                                               genua GmbH
                                                             D. Van Geest
                                                                         
                                                              S. Kousidis
                                                                      BSI
-                                                       14 September 2023
+                                                         23 October 2023
 
 
   Internet X.509 Public Key Infrastructure: Algorithm Identifiers for
@@ -60,7 +60,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 17 March 2024.
+   This Internet-Draft will expire on 25 April 2024.
 
 Copyright Notice
 
@@ -681,16 +681,16 @@ END
    of signing key pairs.
 
    Usual backup and restore strategies when using a stateless signature
-   scheme (e.g.  SLH-DSA) is to duplicate private keying material and to
-   operate redundant signing devices or to store and safeguard a copy of
-   the private keying material such that it can be used to set up a new
-   signing device in case of technical difficulties.
+   scheme (e.g.  SLH-DSA) are to duplicate private keying material and
+   to operate redundant signing devices or to store and safeguard a copy
+   of the private keying material such that it can be used to set up a
+   new signing device in case of technical difficulties.
 
    For stateful HBS such straightforward backup and restore strategies
    will lead to OTS reuse with high probability as a correct state
    management is not guaranteed.  Strategies for maintaining
-   availability and keeping a correct state are described in 7 of
-   [NIST-SP-800-208].
+   availability and keeping a correct state are described in Section 7
+   of [NIST-SP-800-208].
 
 11.  IANA Considerations
 
