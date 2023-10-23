@@ -672,7 +672,7 @@ Certificate Authorities have high demands in order to ensure the availability
 of signature generation throughout the validity period of signing key pairs.
 
 Usual backup and restore strategies when using a stateless signature scheme
-(e.g. SLH-DSA) is to duplicate private keying material and to operate redundant
+(e.g. SLH-DSA) are to duplicate private keying material and to operate redundant
 signing devices or to store and safeguard a copy of the private keying material
 such that it can be used to set up a new signing device in case of technical
 difficulties.
@@ -680,7 +680,7 @@ difficulties.
 For stateful HBS such straightforward backup and restore strategies will lead
 to OTS reuse with high probability as a correct state management is not
 guaranteed. Strategies for maintaining availability and keeping a correct state
-are described in 7 of [NIST-SP-800-208].
+are described in Section 7 of [NIST-SP-800-208].
 
 # IANA Considerations
 
