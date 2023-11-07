@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-09-17T00:30:38.325369+00:00",
+  "timestamp": "2023-11-07T00:30:09.401760+00:00",
   "repo": "x509-hbs/draft-gazdag-x509-hash-sigs",
   "labels": [
     {
@@ -252,7 +252,7 @@
             "abbreviatedOid": "1b1d7bf"
           },
           "author": "exception42",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "APPROVED",
           "body": "Changes are fine",
           "createdAt": "2023-03-03T07:52:47Z",
