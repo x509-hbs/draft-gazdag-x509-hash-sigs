@@ -40,7 +40,7 @@ author:
     ins: S. Kousidis
     name: Stavros Kousidis
     org: BSI
-    email: stavros.kousidis@bsi.bund.de
+    email: kousidis.ietf@gmail.com
 
 normative:
   RFC5911:
