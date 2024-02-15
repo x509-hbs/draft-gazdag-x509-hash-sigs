@@ -5,14 +5,14 @@
 LAMPS - Limited Additional Mechanisms for PKIX and SMIME      K. Bashiri
 Internet-Draft                                                       BSI
 Intended status: Informational                                S. Fluhrer
-Expires: 25 April 2024                                     Cisco Systems
+Expires: 18 August 2024                                    Cisco Systems
                                                                S. Gazdag
                                                               genua GmbH
                                                             D. Van Geest
                                                                         
                                                              S. Kousidis
                                                                      BSI
-                                                         23 October 2023
+                                                        15 February 2024
 
 
   Internet X.509 Public Key Infrastructure: Algorithm Identifiers for
@@ -60,11 +60,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 April 2024.
+   This Internet-Draft will expire on 18 August 2024.
 
 Copyright Notice
 
-   Copyright (c) 2023 IETF Trust and the persons identified as the
+   Copyright (c) 2024 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -551,7 +551,7 @@ sa-XMSS-HashSig SIGNATURE-ALGORITHM ::= {
 sa-XMSSMT-HashSig SIGNATURE-ALGORITHM ::= {
    IDENTIFIER id-alg-xmssmt-hashsig
    PARAMS ARE absent
-   PUBLIC-KEYS { pk-XMSSMT }
+   PUBLIC-KEYS { pk-XMSSMT-HashSig }
    SMIME-CAPS { IDENTIFIED BY id-alg-xmssmt-hashsig } }
 
 -- sa-sphincs-plus-128 is defined in [I-D.ietf-lamps-cms-sphincs-plus]
@@ -600,7 +600,7 @@ XMSS-HashSig-PublicKey ::= OCTET STRING
 
 pk-XMSSMT-HashSig PUBLIC-KEY ::= {
    IDENTIFIER id-alg-xmssmt-hashsig
-   KEY XMSSMT-PublicKey
+   KEY XMSSMT-HashSig-PublicKey
    PARAMS ARE absent
    CERT-KEY-USAGE
       { digitalSignature, nonRepudiation, keyCertSign, cRLSign } }
@@ -703,11 +703,11 @@ END
 
    [I-D.ietf-lamps-cms-sphincs-plus]
               Housley, R., Fluhrer, S., Kampanakis, P., and B.
-              Westerbaan, "Use of the SPHINCS+ Signature Algorithm in
-              the Cryptographic Message Syntax (CMS)", Work in Progress,
-              Internet-Draft, draft-ietf-lamps-cms-sphincs-plus-02, 17
-              May 2023, <https://datatracker.ietf.org/doc/html/draft-
-              ietf-lamps-cms-sphincs-plus-02>.
+              Westerbaan, "Use of the SLH-DSA Signature Algorithm in the
+              Cryptographic Message Syntax (CMS)", Work in Progress,
+              Internet-Draft, draft-ietf-lamps-cms-sphincs-plus-03, 14
+              November 2023, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-lamps-cms-sphincs-plus-03>.
 
    [NIST-FIPS-205]
               National Institute of Standards and Technology (NIST),
