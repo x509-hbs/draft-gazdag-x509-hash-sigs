@@ -546,7 +546,7 @@ This ASN.1 Module builds upon the conventions established in [RFC5911].
     sa-XMSSMT-HashSig SIGNATURE-ALGORITHM ::= {
        IDENTIFIER id-alg-xmssmt-hashsig
        PARAMS ARE absent
-       PUBLIC-KEYS { pk-XMSSMT }
+       PUBLIC-KEYS { pk-XMSSMT-HashSig }
        SMIME-CAPS { IDENTIFIED BY id-alg-xmssmt-hashsig } }
 
     -- sa-sphincs-plus-128 is defined in [I-D.ietf-lamps-cms-sphincs-plus]
@@ -595,7 +595,7 @@ This ASN.1 Module builds upon the conventions established in [RFC5911].
 
     pk-XMSSMT-HashSig PUBLIC-KEY ::= {
        IDENTIFIER id-alg-xmssmt-hashsig
-       KEY XMSSMT-PublicKey
+       KEY XMSSMT-HashSig-PublicKey
        PARAMS ARE absent
        CERT-KEY-USAGE
           { digitalSignature, nonRepudiation, keyCertSign, cRLSign } }
