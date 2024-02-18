@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-15T00:29:41.050233+00:00",
+  "timestamp": "2024-02-18T00:32:15.762325+00:00",
   "repo": "x509-hbs/draft-gazdag-x509-hash-sigs",
   "labels": [
     {
@@ -215,6 +215,22 @@
       "createdAt": "2023-09-14T13:00:48Z",
       "updatedAt": "2023-09-14T13:00:48Z",
       "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 15,
+      "id": "I_kwDOI2x9xc5_XkMi",
+      "title": "ASN.1 module does not compile",
+      "url": "https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/issues/15",
+      "state": "CLOSED",
+      "author": "fluppe2",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Found by Russ Housley:\r\n\r\nI was able to make it compile with two changes...\r\n\r\nCHANGE 1: Correct the PUBLIC-KEYS line of sa-XMSSMT-HashSig:\r\n\r\nsa-XMSSMT-HashSig SIGNATURE-ALGORITHM ::= {\r\n   IDENTIFIER id-alg-xmssmt-hashsig\r\n   PARAMS ARE absent\r\n   PUBLIC-KEYS { pk-XMSSMT-HashSig }\r\n   SMIME-CAPS { IDENTIFIED BY id-alg-xmssmt-hashsig } }\r\n\r\nCHANGE 2: Correct the KEY line for pk-XMSSMT-HashSig:\r\n\r\npk-XMSSMT-HashSig PUBLIC-KEY ::= {\r\n   IDENTIFIER id-alg-xmssmt-hashsig\r\n   KEY XMSSMT-HashSig-PublicKey\r\n   PARAMS ARE absent\r\n   CERT-KEY-USAGE\r\n      { digitalSignature, nonRepudiation, keyCertSign, cRLSign } }\r\n\r\nXMSSMT-HashSig-PublicKey ::= OCTET STRING\r\n",
+      "createdAt": "2024-02-15T15:53:49Z",
+      "updatedAt": "2024-02-15T15:59:36Z",
+      "closedAt": "2024-02-15T15:59:36Z",
       "comments": []
     }
   ],
@@ -947,6 +963,48 @@
           "body": "",
           "createdAt": "2023-09-14T12:55:27Z",
           "updatedAt": "2023-09-14T12:55:27Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "id": "PR_kwDOI2x9xc5m_xyJ",
+      "title": "Fixed ASN.1 module",
+      "url": "https://github.com/x509-hbs/draft-gazdag-x509-hash-sigs/pull/16",
+      "state": "MERGED",
+      "author": "fluppe2",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-02-15T15:56:55Z",
+      "updatedAt": "2024-02-15T15:59:36Z",
+      "baseRepository": "x509-hbs/draft-gazdag-x509-hash-sigs",
+      "baseRefName": "main",
+      "baseRefOid": "0b5aa4e5269306efd20916c77defe52f073492da",
+      "headRepository": "x509-hbs/draft-gazdag-x509-hash-sigs",
+      "headRefName": "15-asn1-module-does-not-compile",
+      "headRefOid": "b281f1ea0d099f1d16a5c4578b08676f8c6a4a3c",
+      "closedAt": "2024-02-15T15:59:35Z",
+      "mergedAt": "2024-02-15T15:59:35Z",
+      "mergedBy": "BashiriK",
+      "mergeCommit": {
+        "oid": "efdd64e0acf06e4a54199cf9ce1d7d24d785cd05"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOI2x9xc5wP23b",
+          "commit": {
+            "abbreviatedOid": "b281f1e"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-02-15T15:59:30Z",
+          "updatedAt": "2024-02-15T15:59:30Z",
           "comments": []
         }
       ]
